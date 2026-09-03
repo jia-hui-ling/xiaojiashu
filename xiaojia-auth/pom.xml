@@ -36,6 +36,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.jiahuiling</groupId>
+            <artifactId>xiaojia-spring-boot-starter-biz-operationlog</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

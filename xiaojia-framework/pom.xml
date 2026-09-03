@@ -13,6 +13,7 @@
     <name>xiaojia-framework</name>
     <modules>
         <module>xiaojia-common</module>
+        <module>xiaojia-spring-boot-starter-biz-operationlog</module>
     </modules>
 
 </project>
