@@ -1,4 +1,4 @@
-package com.jiahuiling.framework.common.xiaojiashu.auth.controller;
+package com.jiahuiling.xiaojiashu.auth.controller;
 
 import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
