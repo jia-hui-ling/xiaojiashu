@@ -3,6 +3,8 @@ package com.jiahuiling.xiaojiashu.auth.controller;
 import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,10 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
-    @GetMapping("Test")
+    @GetMapping("Test1")
     @ApiOperationLog(description = "哈哈哈")
-    public Response<String> test(){
+    public Response<String> test1(){
         System.out.println(Response.fail("000"));
         return Response.success("你好");
+    }
+    @PostMapping("Test2")
+    @ApiOperationLog(description = "哈哈哈")
+    public Response<User> test2(@RequestBody User user){
+        return Response.success(user);
     }
 }

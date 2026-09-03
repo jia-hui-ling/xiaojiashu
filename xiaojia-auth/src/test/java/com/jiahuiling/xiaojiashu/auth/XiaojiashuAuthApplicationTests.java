@@ -16,12 +16,12 @@ class XiaojiashuAuthApplicationTests {
     @Test
     void contextLoads() {
         UserDO userDO = UserDO.builder()
-                .username("犬小哈")
+                .id(9L)
+                .username("test-user")
                 .createTime(LocalDateTime.now())
                 .updateTime(LocalDateTime.now())
                 .build();
 
         userDOMapper.insert(userDO);
     }
-
 }
