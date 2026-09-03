@@ -7,10 +7,11 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>xiaojia-spring-boot-starter-biz-operationlog</artifactId>
+    <artifactId>xiaojia-spring-boot-starter-jackson</artifactId>
     <packaging>jar</packaging>
 
-    <name>${project.artifactId}</name>
+    <name>xiaojia-spring-boot-starter-jackson</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,14 +22,26 @@
             <groupId>com.jiahuiling</groupId>
             <artifactId>xiaojia-common</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.jiahuiling</groupId>
-            <artifactId>xiaojia-spring-boot-starter-jackson</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
