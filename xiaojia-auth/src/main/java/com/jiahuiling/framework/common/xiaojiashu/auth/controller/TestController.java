@@ -1,5 +1,6 @@
 package com.jiahuiling.framework.common.xiaojiashu.auth.controller;
 
+import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
     @GetMapping("Test")
+    @ApiOperationLog(description = "哈哈哈")
     public Response<String> test(){
         System.out.println(Response.fail("000"));
         return Response.success("你好");

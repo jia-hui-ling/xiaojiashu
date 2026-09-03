@@ -39,6 +39,9 @@
         <spring-boot.version>3.0.2</spring-boot.version>
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
         <spring-cloud.version>2022.0.0</spring-cloud.version>
+
+        <jackson.version>2.16.1</jackson.version>
+        <druid.version>1.2.21</druid.version>
     </properties>
 
     <!-- 统一依赖管理 -->
@@ -83,7 +86,32 @@
             <dependency>
                 <groupId>com.jiahuiling</groupId>
                 <artifactId>xiaojia-common</artifactId>
-                <version>${version}</version>
+                <version>${revision}</version>
+            </dependency>
+
+<!--            Jackson-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jiahuiling</groupId>
+                <artifactId>xiaojia-spring-boot-starter-biz-operationlog</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- Druid 数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>${druid.version}</version>
             </dependency>
 
         </dependencies>
