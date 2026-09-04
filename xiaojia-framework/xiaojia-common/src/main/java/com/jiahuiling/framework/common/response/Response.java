@@ -53,7 +53,7 @@ public class Response<T> implements Serializable {
         Response<T> response = new Response<>();
         response.setSuccess(false);
         response.setErrorCode(bizException.getErrorCode());
-        response.setMessage(bizException.getMessage());
+        response.setMessage(bizException.getErrorMessage());
         return response;
     }
 
@@ -61,7 +61,7 @@ public class Response<T> implements Serializable {
         Response<T> response = new Response<>();
         response.setSuccess(false);
         response.setErrorCode(baseException.getErrorCode());
-        response.setMessage(baseException.getErrorMsg());
+        response.setMessage(baseException.getErrorMessage());
         return response;
     }
 

@@ -1,9 +1,8 @@
 package com.jiahuiling.xiaojiashu.auth.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class User {
+    @NotBlank(message = "0000")
     private String nickname;
     LocalDateTime createTime;
 
