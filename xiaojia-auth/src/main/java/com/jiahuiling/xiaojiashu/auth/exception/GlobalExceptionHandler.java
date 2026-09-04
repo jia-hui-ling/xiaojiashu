@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Optional;
@@ -32,14 +33,28 @@ public class GlobalExceptionHandler {
         StringBuilder errorMessage = new StringBuilder();
         Optional.ofNullable(bindingResult.getFieldErrors()).ifPresent(errors ->
                 errors.forEach(error ->
-                errorMessage.append(error.getField())
-                        .append(" ")
-                        .append(error.getDefaultMessage())
-                        .append(", 当前值: '")
-                        .append(error.getRejectedValue())
-                        .append("'; ")));
+                        errorMessage.append(error.getField())
+                                .append(" ")
+                                .append(error.getDefaultMessage())
+                                .append(", 当前值: '")
+                                .append(error.getRejectedValue())
+                                .append("'; ")));
         log.warn("{} request error, errorCode: {}, errorMessage: {}", request.getRequestURI(), errorCode, errorMessage);
         return Response.fail(errorCode, errorMessage.toString());
+    }
+
+    /**
+     * 捕获 guava 参数校验异常
+     *
+     * @return
+     */
+    @ExceptionHandler({IllegalArgumentException.class})
+    @ResponseBody
+    public Response<Object> handleIllegalArgumentException(HttpServletRequest request, IllegalArgumentException e) {
+        String errorCode = ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode();
+        String errorMessage = e.getMessage();
+        log.warn("{} request error, errorCode: {}, errorMessage: {}", request.getRequestURI(), errorCode, errorMessage);
+        return Response.fail(errorCode, errorMessage);
     }
 
     @ExceptionHandler(Exception.class)

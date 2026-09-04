@@ -2131,3 +2131,654 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 2026-09-04 13:39:46.861 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2026-09-04 13:39:46.865 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
 2026-09-04 13:39:48.647 [http-nio-8080-exec-3] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.jiahuiling.xiaojiashu.auth.controller.TestController
+2026-09-04 14:06:00.699 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 14:06:00.702 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:07:42.621 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 25900 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:07:42.623 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:07:44.114 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:07:44.120 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:07:44.163 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:07:45.264 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:07:45.277 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:07:45.278 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:07:45.399 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:07:45.399 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2695 ms
+2026-09-04 19:07:46.114 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:07:46.498 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:07:47.571 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:07:47.655 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:07:47.665 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 5.853 seconds (process running for 6.643)
+2026-09-04 19:07:48.000 [RMI TCP Connection(4)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 19:07:48.000 [RMI TCP Connection(4)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 19:07:48.001 [RMI TCP Connection(4)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-04 19:08:42.595 [http-nio-8080-exec-5] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2026-09-04 19:08:42.681 [http-nio-8080-exec-5] INFO  c.j.x.a.service.Impl.VerificationCodeServiceImpl - ==> 手机号: 15513003933, 已发送验证码：【205363】
+2026-09-04 19:08:42.693 [http-nio-8080-exec-5] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 100ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
+2026-09-04 19:09:20.969 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 19:09:20.978 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:40:15.484 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 25060 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:40:15.487 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:40:16.524 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:40:16.529 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:40:16.560 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:40:17.301 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:40:17.311 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:40:17.311 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:40:17.438 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:40:17.438 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1896 ms
+2026-09-04 19:40:18.013 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:40:18.289 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:40:19.146 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:40:19.213 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:40:19.223 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 4.326 seconds (process running for 5.021)
+2026-09-04 19:40:19.607 [RMI TCP Connection(3)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 19:40:19.608 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 19:40:19.609 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-04 19:40:22.716 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2026-09-04 19:40:22.757 [http-nio-8080-exec-1] INFO  c.j.x.a.service.Impl.VerificationCodeServiceImpl - ==> 手机号: 15513003933, 已发送验证码：【798993】
+2026-09-04 19:40:22.768 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 52ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
+2026-09-04 19:41:47.307 [http-nio-8080-exec-5] ERROR c.j.x.auth.exception.GlobalExceptionHandler - /user/login request error
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:126)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:504)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1274)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-09-04 19:42:53.591 [http-nio-8080-exec-7] ERROR c.j.x.auth.exception.GlobalExceptionHandler - /user/login request error
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:126)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:504)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1274)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-09-04 19:43:15.444 [http-nio-8080-exec-9] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"798993","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:43:15.505 [http-nio-8080-exec-9] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 66ms, 出参: {"success":false,"data":null,"errorCode":"AUTH-20001","message":"验证码错误"} =================================== 
+2026-09-04 19:44:48.731 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"798993","password":"","type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:44:48.740 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 10ms, 出参: {"success":false,"data":null,"errorCode":"AUTH-20001","message":"验证码错误"} =================================== 
+2026-09-04 19:46:02.509 [http-nio-8080-exec-5] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"798993","password":"","type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:46:02.521 [http-nio-8080-exec-5] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 13ms, 出参: {"success":false,"data":null,"errorCode":"AUTH-20001","message":"验证码错误"} =================================== 
+2026-09-04 19:48:14.109 [http-nio-8080-exec-7] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2026-09-04 19:48:14.129 [http-nio-8080-exec-7] INFO  c.j.x.a.service.Impl.VerificationCodeServiceImpl - ==> 手机号: 15513003933, 已发送验证码：【894273】
+2026-09-04 19:48:14.135 [http-nio-8080-exec-7] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 28ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
+2026-09-04 19:48:55.792 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 19:48:55.804 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:49:02.023 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 33132 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:49:02.028 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:49:05.460 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:49:05.468 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:49:05.542 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:49:06.858 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:49:06.872 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:49:06.873 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:49:07.045 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:49:07.046 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4929 ms
+2026-09-04 19:49:07.999 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:49:08.606 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:49:09.888 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:49:09.960 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:49:09.971 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 8.825 seconds (process running for 9.425)
+2026-09-04 19:49:10.481 [RMI TCP Connection(3)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 19:49:10.481 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 19:49:10.482 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-04 19:49:35.269 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 19:49:35.277 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:49:44.676 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 27832 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:49:44.685 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:49:47.165 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:49:47.177 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:49:47.237 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:49:49.466 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:49:49.485 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:49:49.485 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:49:49.728 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:49:49.729 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4851 ms
+2026-09-04 19:49:50.554 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:49:50.990 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:49:52.169 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:49:52.257 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:49:52.270 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 9.139 seconds (process running for 10.572)
+2026-09-04 19:49:52.801 [RMI TCP Connection(2)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 19:49:52.801 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 19:49:52.803 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-04 19:50:21.482 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2026-09-04 19:50:21.527 [http-nio-8080-exec-1] WARN  c.j.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail, errorCode: AYTH-20000, errorMessage: 请求频繁，请3分钟后重试
+2026-09-04 19:50:41.437 [http-nio-8080-exec-6] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"894273","password":"","type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:50:41.485 [http-nio-8080-exec-6] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id,password from t_user where phone=?
+2026-09-04 19:50:41.725 [http-nio-8080-exec-6] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 15513003933(String)
+2026-09-04 19:50:41.745 [http-nio-8080-exec-6] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 0
+2026-09-04 19:50:41.749 [http-nio-8080-exec-6] INFO  c.j.xiaojiashu.auth.service.Impl.UserServiceImpl - ==> 用户是否注册, phone: 15513003933, userDO: null
+2026-09-04 19:50:41.757 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (xiaojiashu_id, `password`, nickname, avatar, birthday, background_img, phone, sex, `status`, introduction, create_time, update_time, is_deleted) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-04 19:50:41.850 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 10002(String), null, 喜欢小贾的10002(String), null, null, null, 15513003933(String), null, 0(Integer), null, 2026-09-04T19:50:41.757073400(LocalDateTime), 2026-09-04T19:50:41.757073400(LocalDateTime), false(Boolean)
+2026-09-04 19:50:41.922 [http-nio-8080-exec-6] ERROR c.j.x.auth.exception.GlobalExceptionHandler - /user/login request error
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+### The error may exist in file [D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes\mapper\UserDOMapper.xml]
+### The error may involve com.jiahuiling.xiaojiashu.auth.domain.mapper.UserDOMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into t_user (xiaojiashu_id, `password`,       nickname, avatar, birthday,        background_img, phone, sex,        `status`, introduction, create_time,        update_time, is_deleted)     values (?, ?, ?,       ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
+### Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:99)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy95.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy96.insert(Unknown Source)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.registerUser(UserServiceImpl.java:108)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.LoginAndRegister(UserServiceImpl.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:699)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl$$SpringCGLIB$$0.LoginAndRegister(<generated>)
+	at com.jiahuiling.xiaojiashu.auth.controller.UserController.loginAndRegister(UserController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLogAspect.doAround(ApiOperationLogAspect.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:623)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.jiahuiling.xiaojiashu.auth.controller.UserController$$SpringCGLIB$$0.loginAndRegister(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLException: Column count doesn't match value count at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3462)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:434)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3460)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:158)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy145.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 100 common frames omitted
+2026-09-04 19:52:28.333 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 19:52:28.350 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:52:49.821 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 30380 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:52:49.826 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:52:51.036 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:52:51.041 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:52:51.079 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:52:52.285 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:52:52.306 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:52:52.306 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:52:52.468 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:52:52.469 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2581 ms
+2026-09-04 19:52:53.089 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:52:53.521 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:52:55.015 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:52:55.119 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:52:55.136 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 5.951 seconds (process running for 6.839)
+2026-09-04 19:52:55.736 [RMI TCP Connection(3)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 19:52:55.736 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 19:52:55.738 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-04 19:53:00.159 [http-nio-8080-exec-2] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"894273","password":"","type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:53:00.247 [http-nio-8080-exec-2] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 95ms, 出参: {"success":false,"data":null,"errorCode":"AUTH-20001","message":"验证码错误"} =================================== 
+2026-09-04 19:53:12.222 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2026-09-04 19:53:12.254 [http-nio-8080-exec-3] INFO  c.j.x.a.service.Impl.VerificationCodeServiceImpl - ==> 手机号: 15513003933, 已发送验证码：【598770】
+2026-09-04 19:53:12.274 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 52ms, 出参: {"success":true,"data":"598770","errorCode":null,"message":null} =================================== 
+2026-09-04 19:53:30.882 [http-nio-8080-exec-6] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"598770","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:53:30.916 [http-nio-8080-exec-6] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id,password from t_user where phone=?
+2026-09-04 19:53:31.084 [http-nio-8080-exec-6] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 15513003933(String)
+2026-09-04 19:53:31.110 [http-nio-8080-exec-6] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 0
+2026-09-04 19:53:31.111 [http-nio-8080-exec-6] INFO  c.j.xiaojiashu.auth.service.Impl.UserServiceImpl - ==> 用户是否注册, phone: 15513003933, userDO: null
+2026-09-04 19:53:31.119 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (xiaojiashu_id, `password`, nickname, avatar, birthday, background_img, phone, sex, `status`, introduction, create_time, update_time, is_deleted) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-09-04 19:53:31.213 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: 10003(String), null, 喜欢小贾的10003(String), null, null, null, 15513003933(String), null, 0(Integer), null, 2026-09-04T19:53:31.116532(LocalDateTime), 2026-09-04T19:53:31.116532(LocalDateTime), false(Boolean)
+2026-09-04 19:53:31.246 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2026-09-04 19:53:31.249 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserRoleDOMapper.insert - ==>  Preparing: insert into t_user_role_rel (id, user_id, role_id, create_time, update_time, is_deleted ) values (?, ?, ?, ?, ?, ? )
+2026-09-04 19:53:31.251 [http-nio-8080-exec-6] DEBUG c.j.x.auth.domain.mapper.UserRoleDOMapper.insert - ==> Parameters: null, 1(Long), 1(Long), 2026-09-04T19:53:31.249076500(LocalDateTime), 2026-09-04T19:53:31.249076500(LocalDateTime), null
+2026-09-04 19:53:31.313 [http-nio-8080-exec-6] ERROR c.j.x.auth.exception.GlobalExceptionHandler - /user/login request error
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'is_deleted' cannot be null
+### The error may exist in file [D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes\mapper\UserRoleDOMapper.xml]
+### The error may involve com.jiahuiling.xiaojiashu.auth.domain.mapper.UserRoleDOMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into t_user_role_rel (id, user_id, role_id,        create_time, update_time, is_deleted       )     values (?, ?, ?,        ?, ?, ?       )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'is_deleted' cannot be null
+; Column 'is_deleted' cannot be null
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:95)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy95.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy97.insert(Unknown Source)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.registerUser(UserServiceImpl.java:119)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.LoginAndRegister(UserServiceImpl.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:699)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl$$SpringCGLIB$$0.LoginAndRegister(<generated>)
+	at com.jiahuiling.xiaojiashu.auth.controller.UserController.loginAndRegister(UserController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLogAspect.doAround(ApiOperationLogAspect.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:623)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.jiahuiling.xiaojiashu.auth.controller.UserController$$SpringCGLIB$$0.loginAndRegister(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'is_deleted' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3462)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:434)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3460)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:158)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy145.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 100 common frames omitted
+2026-09-04 19:53:52.984 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 19:53:52.990 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:53:56.709 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 2204 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:53:56.712 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:53:57.766 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:53:57.772 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:53:57.808 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:53:58.857 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:53:58.868 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:53:58.869 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:53:59.223 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:53:59.223 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2455 ms
+2026-09-04 19:54:00.116 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:54:00.529 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:54:19.453 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:54:19.546 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:54:19.558 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 23.533 seconds (process running for 24.835)
+2026-09-04 19:54:19.624 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 19:54:19.637 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 19:59:14.513 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 7128 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 19:59:14.517 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 19:59:15.568 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 19:59:15.572 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 19:59:15.600 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2026-09-04 19:59:16.342 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 19:59:16.360 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 19:59:16.361 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 19:59:16.535 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 19:59:16.536 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1969 ms
+2026-09-04 19:59:17.409 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 19:59:17.950 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 19:59:19.252 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 19:59:19.391 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 19:59:19.408 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 5.436 seconds (process running for 6.088)
+2026-09-04 19:59:19.864 [RMI TCP Connection(2)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 19:59:19.864 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 19:59:19.867 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-09-04 19:59:23.552 [http-nio-8080-exec-2] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"598770","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 19:59:23.626 [http-nio-8080-exec-2] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id,password from t_user where phone=?
+2026-09-04 19:59:23.801 [http-nio-8080-exec-2] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 15513003933(String)
+2026-09-04 19:59:23.825 [http-nio-8080-exec-2] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2026-09-04 19:59:23.831 [http-nio-8080-exec-2] INFO  c.j.xiaojiashu.auth.service.Impl.UserServiceImpl - ==> 用户是否注册, phone: 15513003933, userDO: {"id":1,"xiaojiashuId":null,"password":null,"nickname":null,"avatar":null,"birthday":null,"backgroundImg":null,"phone":null,"sex":null,"status":null,"introduction":null,"createTime":null,"updateTime":null,"isDeleted":null}
+2026-09-04 19:59:23.921 [http-nio-8080-exec-2] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 374ms, 出参: {"success":true,"data":"f672cc94-f1ae-4b1b-8fa3-c94196d1fcb3","errorCode":null,"message":null} =================================== 
+2026-09-04 20:04:50.261 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 20:04:50.275 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 20:04:55.834 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 4888 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 20:04:55.839 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 20:04:57.029 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 20:04:57.032 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 20:04:57.066 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2026-09-04 20:04:58.233 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 20:04:58.254 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 20:04:58.255 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 20:04:58.491 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 20:04:58.491 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2600 ms
+2026-09-04 20:04:59.422 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 20:04:59.885 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 20:05:01.237 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 20:05:01.320 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 20:05:01.331 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 6.146 seconds (process running for 6.878)
+2026-09-04 20:05:01.982 [RMI TCP Connection(3)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 20:05:01.983 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 20:05:01.985 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-04 20:10:20.199 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 20:10:20.214 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 20:10:27.342 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 29624 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 20:10:27.344 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 20:10:28.731 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 20:10:28.736 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 20:10:28.765 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-09-04 20:10:29.866 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 20:10:29.887 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 20:10:29.887 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 20:10:30.091 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 20:10:30.092 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2692 ms
+2026-09-04 20:10:31.044 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 20:10:31.532 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 20:10:33.013 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 20:10:33.208 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 20:10:33.239 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 6.515 seconds (process running for 7.193)
+2026-09-04 20:10:33.628 [RMI TCP Connection(3)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 20:10:33.629 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 20:10:33.631 [RMI TCP Connection(3)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-04 20:10:35.474 [http-nio-8080-exec-2] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 20:10:35.507 [http-nio-8080-exec-2] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 42ms, 出参: {"success":false,"data":null,"errorCode":"AUTH-20001","message":"验证码错误"} =================================== 
+2026-09-04 20:11:27.055 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 20:11:27.061 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 20:12:00.828 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 4688 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 20:12:00.832 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 20:12:01.823 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 20:12:01.828 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 20:12:01.856 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-09-04 20:12:02.644 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 20:12:02.661 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 20:12:02.662 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 20:12:02.859 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 20:12:02.860 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1974 ms
+2026-09-04 20:12:04.090 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 20:12:04.914 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 20:12:07.137 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 20:12:07.287 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 20:12:07.316 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 7.071 seconds (process running for 7.785)
+2026-09-04 20:12:07.817 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 20:12:07.818 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 20:12:07.821 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-09-04 20:12:08.602 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-04 20:12:08.645 [http-nio-8080-exec-1] WARN  c.j.x.auth.exception.GlobalExceptionHandler - /user/login request error, errorCode: AUTH-10001, errorMessage: 验证码不能为空
