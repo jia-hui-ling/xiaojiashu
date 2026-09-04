@@ -42,3 +42,15 @@
 2026-09-04 12:53:04.681 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Started XiaojiashuAuthApplicationTests in 21.028 seconds (process running for 22.364)
 2026-09-04 12:53:08.383 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2026-09-04 12:53:08.411 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 13:04:52.602 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Starting XiaojiashuAuthApplicationTests using Java 17.0.15 with PID 2708 (started by LENOVO in D:\jiahuiling\Java\xiaojiashu\xiaojia-auth)
+2026-09-04 13:04:52.604 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - The following 1 profile is active: "dev"
+2026-09-04 13:04:53.787 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 13:04:53.793 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 13:04:53.835 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-09-04 13:04:57.290 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 13:04:58.001 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 13:05:00.438 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 13:05:00.722 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Started XiaojiashuAuthApplicationTests in 8.666 seconds (process running for 10.0)
+2026-09-04 13:05:02.152 [AuthExecutor-1] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - 异步线程
+2026-09-04 13:05:02.198 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 13:05:02.217 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

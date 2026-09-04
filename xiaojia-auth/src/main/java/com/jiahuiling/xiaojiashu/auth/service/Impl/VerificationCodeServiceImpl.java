@@ -5,7 +5,7 @@ import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.xiaojiashu.auth.constant.RedisKeyConstants;
 import com.jiahuiling.xiaojiashu.auth.enums.ResponseCodeEnum;
-import com.jiahuiling.xiaojiashu.auth.model.VO.veriticationcode.SendVeriticationCodeReqVO;
+import com.jiahuiling.xiaojiashu.auth.model.VO.veriticationcode.SendVerificationCodeReqVO;
 import com.jiahuiling.xiaojiashu.auth.service.VerificationCodeService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
     @Resource
     RedisTemplate redisTemplate;
     @Override
-    public Response<?> send(SendVeriticationCodeReqVO sendVerificationCodeReqVO) {
+    public Response<?> send(SendVerificationCodeReqVO sendVerificationCodeReqVO) {
         String phone = sendVerificationCodeReqVO.getPhone();
         String key = RedisKeyConstants.buildVerificationCodeKey(phone);
         Boolean isSent = redisTemplate.hasKey(key);

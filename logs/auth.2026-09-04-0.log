@@ -2085,3 +2085,49 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 2026-09-04 12:56:12.084 [http-nio-8080-exec-6] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 104ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
 2026-09-04 12:57:05.677 [http-nio-8080-exec-5] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
 2026-09-04 12:57:05.708 [http-nio-8080-exec-5] WARN  c.j.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail, errorCode: AYTH-20000, errorMessage: 请求频繁，请3分钟后重试
+2026-09-04 12:58:54.650 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 12:58:54.664 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 13:24:35.579 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 25716 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 13:24:35.581 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 13:24:36.637 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 13:24:36.641 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 13:24:36.666 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2026-09-04 13:24:37.573 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 13:24:37.596 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 13:24:37.597 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 13:24:37.772 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 13:24:37.773 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2144 ms
+2026-09-04 13:24:39.280 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 13:24:39.646 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 13:24:40.718 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 13:24:40.862 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 13:24:40.882 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 5.883 seconds (process running for 6.578)
+2026-09-04 13:24:41.326 [RMI TCP Connection(2)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 13:24:41.327 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 13:24:41.330 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-09-04 13:24:44.658 [http-nio-8080-exec-2] WARN  c.j.x.auth.exception.GlobalExceptionHandler - /verification/code/send request error, errorCode: AUTH-10001, errorMessage: phone 手机号格式不正确，需为11位数字, 当前值: '1551300393'; 
+2026-09-04 13:24:50.610 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2026-09-04 13:24:50.671 [http-nio-8080-exec-3] INFO  c.j.x.a.service.Impl.VerificationCodeServiceImpl - ==> 手机号: 15513003933, 已发送验证码：【750705】
+2026-09-04 13:24:50.685 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 76ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
+2026-09-04 13:39:00.951 [http-nio-8080-exec-5] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.jiahuiling.xiaojiashu.auth.controller.TestController
+2026-09-04 13:39:34.421 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 13:39:34.432 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 13:39:42.672 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Starting XiaojiashuAuthApplication using Java 17.0.15 with PID 25460 (D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes started by LENOVO in D:\jiahuiling\Java\xiaojiashu)
+2026-09-04 13:39:42.676 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-04 13:39:43.687 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 13:39:43.692 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 13:39:43.726 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-09-04 13:39:44.481 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-04 13:39:44.493 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-04 13:39:44.493 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-04 13:39:44.598 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-04 13:39:44.599 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1873 ms
+2026-09-04 13:39:45.365 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 13:39:45.592 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 13:39:46.048 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 13:39:46.112 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-04 13:39:46.121 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 4.087 seconds (process running for 4.737)
+2026-09-04 13:39:46.861 [RMI TCP Connection(2)-192.168.52.129] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-04 13:39:46.861 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-04 13:39:46.865 [RMI TCP Connection(2)-192.168.52.129] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-09-04 13:39:48.647 [http-nio-8080-exec-3] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.jiahuiling.xiaojiashu.auth.controller.TestController
