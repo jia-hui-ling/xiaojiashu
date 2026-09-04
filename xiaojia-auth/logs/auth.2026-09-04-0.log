@@ -1,0 +1,44 @@
+2026-09-04 12:13:29.605 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Starting XiaojiashuAuthApplicationTests using Java 17.0.15 with PID 4412 (started by LENOVO in D:\jiahuiling\Java\xiaojiashu\xiaojia-auth)
+2026-09-04 12:13:29.608 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - The following 1 profile is active: "dev"
+2026-09-04 12:13:32.639 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 12:13:32.664 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 12:13:32.864 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 0 Redis repository interfaces.
+2026-09-04 12:13:38.545 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 12:13:39.302 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 12:13:41.601 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 12:13:41.877 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Started XiaojiashuAuthApplicationTests in 13.144 seconds (process running for 16.161)
+2026-09-04 12:13:44.773 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 12:13:44.790 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 12:14:13.548 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Starting XiaojiashuAuthApplicationTests using Java 17.0.15 with PID 4684 (started by LENOVO in D:\jiahuiling\Java\xiaojiashu\xiaojia-auth)
+2026-09-04 12:14:13.550 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - The following 1 profile is active: "dev"
+2026-09-04 12:14:14.784 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 12:14:14.791 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 12:14:14.833 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2026-09-04 12:14:17.376 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 12:14:18.138 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 12:14:20.390 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 12:14:20.656 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Started XiaojiashuAuthApplicationTests in 7.693 seconds (process running for 9.275)
+2026-09-04 12:14:22.860 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 12:14:22.898 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 12:26:39.361 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Starting XiaojiashuAuthApplicationTests using Java 17.0.15 with PID 17184 (started by LENOVO in D:\jiahuiling\Java\xiaojiashu\xiaojia-auth)
+2026-09-04 12:26:39.362 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - The following 1 profile is active: "dev"
+2026-09-04 12:26:41.103 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 12:26:41.110 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 12:26:41.166 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2026-09-04 12:26:45.806 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 12:26:46.883 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 12:26:49.448 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 12:26:49.710 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Started XiaojiashuAuthApplicationTests in 10.918 seconds (process running for 12.381)
+2026-09-04 12:26:52.740 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 12:26:52.754 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-04 12:52:44.212 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Starting XiaojiashuAuthApplicationTests using Java 17.0.15 with PID 24716 (started by LENOVO in D:\jiahuiling\Java\xiaojiashu\xiaojia-auth)
+2026-09-04 12:52:44.213 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - The following 1 profile is active: "dev"
+2026-09-04 12:52:47.109 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-04 12:52:47.123 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-04 12:52:47.286 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 0 Redis repository interfaces.
+2026-09-04 12:52:57.842 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-04 12:52:59.783 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-04 12:53:04.317 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-04 12:53:04.681 [main] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplicationTests - Started XiaojiashuAuthApplicationTests in 21.028 seconds (process running for 22.364)
+2026-09-04 12:53:08.383 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 12:53:08.411 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

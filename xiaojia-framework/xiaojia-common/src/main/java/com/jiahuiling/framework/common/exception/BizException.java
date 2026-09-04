@@ -12,10 +12,10 @@ import lombok.Setter;
 @Setter
 public class BizException extends RuntimeException {
     private String errorCode;
-    private String errorMsg;
+    private String errorMessage;
 
     public BizException(BaseExceptionInterFace baseExceptionInterFace) {
         this.errorCode = baseExceptionInterFace.getErrorCode();
-        this.errorMsg = baseExceptionInterFace.getErrorMsg();
+        this.errorMessage = baseExceptionInterFace.getErrorMessage();
     }
 }

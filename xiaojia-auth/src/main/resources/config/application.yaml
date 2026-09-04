@@ -7,3 +7,12 @@ spring:
       - dev
 mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
+
+sa-token:
+  token-name: satoken
+  timeout: 2592000
+  active-timeout: -1
+  is-concurrent: true
+  is-share: true
+  token-style: uuid
+  is-log: true
