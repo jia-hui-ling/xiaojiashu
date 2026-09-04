@@ -138,4 +138,9 @@
       is_deleted = #{isDeleted,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectEnabledList" resultMap="BaseResultMap">
+    select id,role_key,role_name
+    from t_role
+    where status = 0 and is_deleted = 0
+  </select>
 </mapper>
