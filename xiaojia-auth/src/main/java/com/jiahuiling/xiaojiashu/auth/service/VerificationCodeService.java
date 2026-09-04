@@ -1,7 +1,7 @@
 package com.jiahuiling.xiaojiashu.auth.service;
 
 import com.jiahuiling.framework.common.response.Response;
-import com.jiahuiling.xiaojiashu.auth.model.VO.veriticationcode.SendVeriticationCodeReqVO;
+import com.jiahuiling.xiaojiashu.auth.model.VO.veriticationcode.SendVerificationCodeReqVO;
 
 public interface VerificationCodeService {
     /**
@@ -10,5 +10,5 @@ public interface VerificationCodeService {
      * @param sendVerificationCodeReqVO
      * @return
      */
-    Response<?> send(SendVeriticationCodeReqVO sendVerificationCodeReqVO);
+    Response<?> send(SendVerificationCodeReqVO sendVerificationCodeReqVO);
 }

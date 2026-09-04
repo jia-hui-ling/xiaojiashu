@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +18,9 @@ class XiaojiashuAuthApplicationTests {
     private UserDOMapper userDOMapper;
     @Resource
     private RedisTemplate<String,Object> redisTemplate;
+
+    @Resource
+    private ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
     @Test
     void contextLoads() {
@@ -33,5 +37,12 @@ class XiaojiashuAuthApplicationTests {
     @Test
     void RedisTest() {
         redisTemplate.opsForValue().set("test-user","test-user");
+    }
+
+    @Test
+    void testSubmit() {
+        threadPoolTaskExecutor.submit(()->{
+            log.info("异步线程");
+        });
     }
 }
