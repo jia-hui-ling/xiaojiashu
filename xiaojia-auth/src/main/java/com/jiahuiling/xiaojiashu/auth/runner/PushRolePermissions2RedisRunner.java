@@ -70,22 +70,23 @@ public class PushRolePermissions2RedisRunner implements ApplicationRunner {
                         Collectors.toMap(PermissionDO::getId, permissionDO -> permissionDO)
                 );
 
-                HashMap<Long, List<PermissionDO>> roleIdPermissionDOMap = Maps.newHashMap();
+                HashMap<String, List<String>> roleIdPermissionDOMap = Maps.newHashMap();
 
                 roleDOS.forEach(roleDO -> {
                     Long roleId = roleDO.getId();
+                    String roleKey = roleDO.getRoleKey();
                     List<Long> permissionIds = roleIdPermissionIdsMap.get(roleId);
                     if (CollUtil.isNotEmpty(permissionIds)) {
-                        List<PermissionDO> perDOs = Lists.newArrayList();
+                        List<String> permissionKeys = Lists.newArrayList();
                         permissionIds.forEach(permissionId -> {
                             PermissionDO permissionDO = permissionDOMap.get(permissionId);
-                            perDOs.add(permissionDO);
+                            permissionKeys.add(permissionDO.getPermissionKey());
                         });
-                        roleIdPermissionDOMap.put(roleId, permissionDOS);
+                        roleIdPermissionDOMap.put(roleKey, permissionKeys);
                     }
                 });
-                roleIdPermissionDOMap.forEach((roleId, permissions) -> {
-                    String key = RedisKeyConstants.buildRolePermissionsKey(roleId);
+                roleIdPermissionDOMap.forEach((roleKey, permissions) -> {
+                    String key = RedisKeyConstants.buildRolePermissionsKey(roleKey);
                     redisTemplate.opsForValue().set(key, JsonUtils.toJsonString(permissions));
                 });
             }

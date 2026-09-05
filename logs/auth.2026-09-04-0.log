@@ -2869,3 +2869,5 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'is_deleted
 2026-09-04 21:01:54.911 [http-nio-8080-exec-3] DEBUG c.j.x.auth.domain.mapper.UserRoleDOMapper.insert - ==> Parameters: null, 2(Long), 1(Long), 2026-09-04T21:01:54.908014600(LocalDateTime), 2026-09-04T21:01:54.908014600(LocalDateTime), false(Boolean)
 2026-09-04 21:01:54.913 [http-nio-8080-exec-3] DEBUG c.j.x.auth.domain.mapper.UserRoleDOMapper.insert - <==    Updates: 1
 2026-09-04 21:01:55.016 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 706ms, 出参: {"success":true,"data":"f672cc94-f1ae-4b1b-8fa3-c94196d1fcb3","errorCode":null,"message":null} =================================== 
+2026-09-04 21:03:36.911 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-04 21:03:36.925 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

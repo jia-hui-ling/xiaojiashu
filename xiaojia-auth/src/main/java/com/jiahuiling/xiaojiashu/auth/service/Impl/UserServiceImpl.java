@@ -8,8 +8,10 @@ import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.framework.jackson.util.JsonUtils;
 import com.jiahuiling.xiaojiashu.auth.constant.RedisKeyConstants;
 import com.jiahuiling.xiaojiashu.auth.constant.RoleConstants;
+import com.jiahuiling.xiaojiashu.auth.domain.dataobject.RoleDO;
 import com.jiahuiling.xiaojiashu.auth.domain.dataobject.UserDO;
 import com.jiahuiling.xiaojiashu.auth.domain.dataobject.UserRoleDO;
+import com.jiahuiling.xiaojiashu.auth.domain.mapper.RoleDOMapper;
 import com.jiahuiling.xiaojiashu.auth.domain.mapper.UserDOMapper;
 import com.jiahuiling.xiaojiashu.auth.domain.mapper.UserRoleDOMapper;
 import com.jiahuiling.xiaojiashu.auth.enums.DeletedEnum;
@@ -28,6 +30,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,8 +49,10 @@ public class UserServiceImpl implements UserService {
     private UserDOMapper userDOMapper;
     @Resource
     private UserRoleDOMapper userRoleDOMapper;
-    @Autowired
+    @Resource
     private TransactionTemplate transactionTemplate;
+    @Resource
+    private RoleDOMapper roleDOMapper;
 
     /**
      * 登录与注册
@@ -85,7 +90,7 @@ public class UserServiceImpl implements UserService {
             default:
                 break;
         }
-        StpUtil.isLogin(userId);
+        StpUtil.login(userId);
 
         SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
 
@@ -127,15 +132,16 @@ public class UserServiceImpl implements UserService {
 
                 userRoleDOMapper.insert(userRoleDO);
 
-                List<Long> roles = Lists.newArrayList();
-                roles.add(RoleConstants.COMMON_USER_ID);
-                String userRolesKey = RedisKeyConstants.buildUserRolesKey(phone);
+                RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ID);
+                List<String> roles = new ArrayList(1);
+                roles.add(roleDO.getRoleKey());
+                String userRolesKey = RedisKeyConstants.buildUserRoleKey(userId);
                 redisTemplate.opsForValue().set(userRolesKey, JsonUtils.toJsonString(roles));
 
                 return userId;
             } catch (Exception e) {
                 status.setRollbackOnly();
-                log.error("==> 系统注册用户异常",e);
+                log.error("==> 系统注册用户异常", e);
                 return null;
             }
         });
