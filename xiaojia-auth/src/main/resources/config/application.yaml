@@ -9,10 +9,26 @@ mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
 
 sa-token:
-  token-name: satoken
+  # token 名称（同时也是 cookie 名称）
+  token-name: Authorization
+  # token前缀
+  token-prefix: Bearer
   timeout: 2592000
   active-timeout: -1
   is-concurrent: true
   is-share: true
-  token-style: uuid
+  token-style: random-128
   is-log: true
+
+#nacos:
+#  config:
+#    access-key:
+#    secret-key:
+#    data-id: xiaojiashu-auth
+#    group: DEFAULT_GROUP
+#    type: yaml
+#    server-addr: 127.0.0.1:8848
+#    auto-refresh: true
+#    remote-first: true
+#    bootstrap:
+#      enable: true
