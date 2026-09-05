@@ -1,6 +1,6 @@
 package com.jiahuiling.framework.common.exception;
 
-public interface BaseExceptionInterFace {
+public interface BaseExceptionInterface {
     String getErrorCode();
     String getErrorMessage();
 }

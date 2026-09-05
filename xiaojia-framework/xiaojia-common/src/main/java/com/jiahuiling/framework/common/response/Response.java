@@ -1,6 +1,6 @@
 package com.jiahuiling.framework.common.response;
 
-import com.jiahuiling.framework.common.exception.BaseExceptionInterFace;
+import com.jiahuiling.framework.common.exception.BaseExceptionInterface;
 import com.jiahuiling.framework.common.exception.BizException;
 import lombok.Data;
 
@@ -57,7 +57,7 @@ public class Response<T> implements Serializable {
         return response;
     }
 
-    public static <T> Response<T> fail(BaseExceptionInterFace baseException){
+    public static <T> Response<T> fail(BaseExceptionInterface baseException){
         Response<T> response = new Response<>();
         response.setSuccess(false);
         response.setErrorCode(baseException.getErrorCode());
