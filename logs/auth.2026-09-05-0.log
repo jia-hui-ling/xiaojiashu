@@ -2203,3 +2203,549 @@ Consider defining a bean of type 'com.jiahuiling.xiaojiashu.auth.service.UserSer
 2026-09-05 16:24:54.578 [http-nio-8080-exec-4] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"15513003933"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
 2026-09-05 16:24:54.601 [http-nio-8080-exec-4] WARN  c.j.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail, errorCode: AYTH-20000, errorMessage: 请求频繁，请3分钟后重试
 2026-09-05 16:24:54.606 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.jiahuiling.framework.common.exception.BizException]
+2026-09-05 16:28:14.790 [http-nio-8080-exec-6] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [账号登出], 入参: "5", 请求类: UserController, 请求方法: logout =================================== 
+2026-09-05 16:28:14.790 [http-nio-8080-exec-6] INFO  c.j.xiaojiashu.auth.controller.UserController - ==> 网关透传过来的用户 ID: 5
+2026-09-05 16:28:14.790 [http-nio-8080-exec-6] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [账号登出], 耗时: 1ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
+2026-09-05 16:28:15.133 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 4 class path changes (0 additions, 4 deletions, 0 modifications)
+2026-09-05 16:28:15.172 [Thread-82] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-05 16:28:15.173 [Thread-82] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-09-05 16:28:15.180 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.180 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.550 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.553 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.553 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-6] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.554 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-7] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.555 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-8] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.555 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-9] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.556 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-10] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.557 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.558 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-12] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.559 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-13] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.560 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-14] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.560 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-15] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.561 [Thread-82] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-13-16] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:28:15.569 [Thread-82] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2026-09-05 16:28:15.571 [Thread-82] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] xiaojiashu deregistering service xiaojiashu-auth with instance: Instance{instanceId='null', ip='192.168.52.36', port=8080, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2026-09-05 16:28:15.582 [Thread-82] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2026-09-05 16:28:15.586 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2026-09-05 16:28:15.586 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2026-09-05 16:28:15.587 [Thread-82] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2026-09-05 16:28:15.587 [Thread-82] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2026-09-05 16:28:15.587 [Thread-82] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2026-09-05 16:28:15.587 [Thread-82] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@3c42aaa9[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2026-09-05 16:28:15.587 [Thread-82] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1788596492734_172.17.0.1_43316
+2026-09-05 16:28:15.588 [Thread-82] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@3c703d0e[Running, pool size = 4, active threads = 1, queued tasks = 0, completed tasks = 86]
+2026-09-05 16:28:15.588 [Thread-82] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@23ae4c56[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 133]
+2026-09-05 16:28:15.588 [nacos-grpc-client-executor-127.0.0.1-86] WARN  c.a.nacos.common.remote.client.grpc.GrpcClient - [1788596492734_172.17.0.1_43316]Ignore error event,isRunning:false,isAbandon=false
+2026-09-05 16:28:15.589 [Thread-82] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2026-09-05 16:28:15.589 [Thread-82] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2026-09-05 16:28:15.589 [Thread-82] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2026-09-05 16:28:15.591 [Thread-82] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closing ...
+2026-09-05 16:28:15.595 [Thread-82] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-5} closed
+2026-09-05 16:28:16.516 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:28:16.524 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:28:17.935 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:28:17.960 [com.alibaba.nacos.client.Worker] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2026-09-05 16:28:17.973 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth] & group[DEFAULT_GROUP]
+2026-09-05 16:28:17.991 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth.yaml] & group[DEFAULT_GROUP]
+2026-09-05 16:28:18.007 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth-dev.yaml] & group[DEFAULT_GROUP]
+2026-09-05 16:28:18.008 [restartedMain] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth,DEFAULT_GROUP'}]
+2026-09-05 16:28:18.074 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:28:18.075 [restartedMain] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-05 16:28:20.709 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-05 16:28:20.710 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-05 16:28:20.726 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-09-05 16:28:20.871 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=763870dd-cf77-33bd-b357-1eed379b3342
+2026-09-05 16:28:21.181 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-05 16:28:21.183 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-05 16:28:21.183 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-05 16:28:21.354 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-05 16:28:21.354 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3253 ms
+2026-09-05 16:28:21.638 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed
+2026-09-05 16:28:21.639 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-05 16:28:21.672 [restartedMain] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-05 16:28:21.703 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.jiahuiling.xiaojiashu.auth.service.UserService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.jiahuiling.xiaojiashu.auth.service.UserService' in your configuration.
+
+2026-09-05 16:30:32.512 [Thread-5] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2026-09-05 16:30:32.512 [Thread-12] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2026-09-05 16:30:32.512 [Thread-12] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2026-09-05 16:30:36.030 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:30:36.097 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:30:36.126 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-05 16:30:36.360 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:30:36.363 [restartedMain] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2026-09-05 16:30:36.363 [restartedMain] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2026-09-05 16:30:36.365 [restartedMain] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2026-09-05 16:30:36.401 [restartedMain] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026-09-05 16:30:36.401 [restartedMain] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026-09-05 16:30:36.404 [restartedMain] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2026-09-05 16:30:36.823 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:30:36.838 [restartedMain] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\LENOVO\nacos\config
+2026-09-05 16:30:36.842 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0
+2026-09-05 16:30:36.887 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$601/0x000001d911379258
+2026-09-05 16:30:36.888 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$602/0x000001d911379678
+2026-09-05 16:30:36.888 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2026-09-05 16:30:36.889 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2026-09-05 16:30:36.904 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2026-09-05 16:30:36.953 [restartedMain] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2026-09-05 16:30:38.453 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1788597038230_172.17.0.1_44504
+2026-09-05 16:30:38.455 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Notify connected event to listeners.
+2026-09-05 16:30:38.455 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Connected,notify listen context...
+2026-09-05 16:30:38.456 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2026-09-05 16:30:38.456 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f7ac89f6-89e0-4f51-9865-89b40aac9dbc_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$619/0x000001d911503f18
+2026-09-05 16:30:38.505 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2026-09-05 16:30:38.524 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth] & group[DEFAULT_GROUP]
+2026-09-05 16:30:38.533 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth.yaml] & group[DEFAULT_GROUP]
+2026-09-05 16:30:38.542 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth-dev.yaml] & group[DEFAULT_GROUP]
+2026-09-05 16:30:38.543 [restartedMain] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth,DEFAULT_GROUP'}]
+2026-09-05 16:30:38.568 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:30:38.569 [restartedMain] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-05 16:30:39.886 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-05 16:30:39.891 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-05 16:30:39.946 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+2026-09-05 16:30:40.529 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=dd567026-bce5-3b5c-a976-c9544a4f1a4d
+2026-09-05 16:30:44.298 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-05 16:30:44.331 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-05 16:30:44.332 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-05 16:30:44.643 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-05 16:30:44.644 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6056 ms
+2026-09-05 16:30:46.560 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-05 16:30:47.539 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-09-05 16:30:52.726 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-09-05 16:30:53.324 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-05 16:30:53.452 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-05 16:30:53.458 [restartedMain] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2026-09-05 16:30:53.459 [restartedMain] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2026-09-05 16:30:53.460 [restartedMain] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2026-09-05 16:30:53.477 [restartedMain] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026-09-05 16:30:53.478 [restartedMain] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026-09-05 16:30:53.483 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 7d0987e2-f407-4a08-bb85-fb910022c4cb
+2026-09-05 16:30:53.487 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2026-09-05 16:30:53.487 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2026-09-05 16:30:53.488 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2026-09-05 16:30:53.488 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2026-09-05 16:30:53.489 [restartedMain] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2026-09-05 16:30:53.606 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1788597053499_172.17.0.1_33032
+2026-09-05 16:30:53.606 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2026-09-05 16:30:53.606 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$619/0x000001d911503f18
+2026-09-05 16:30:53.606 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [7d0987e2-f407-4a08-bb85-fb910022c4cb] Notify connected event to listeners.
+2026-09-05 16:30:53.606 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2026-09-05 16:30:53.608 [restartedMain] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] xiaojiashu registering service xiaojiashu-auth with instance Instance{instanceId='null', ip='192.168.52.36', port=8080, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2026-09-05 16:30:53.625 [restartedMain] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP xiaojiashu-auth 192.168.52.36:8080 register finished
+2026-09-05 16:30:54.458 [restartedMain] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 19.501 seconds (process running for 20.375)
+2026-09-05 16:30:54.474 [restartedMain] INFO  c.j.x.auth.runner.PushRolePermissions2RedisRunner - ==> 服务启动，开始同步角色权限数据到 Redis 中...
+2026-09-05 16:30:56.458 [restartedMain] WARN  c.j.x.auth.runner.PushRolePermissions2RedisRunner - ==> 角色权限数据已经同步至 Redis 中，不再同步...
+2026-09-05 16:30:56.470 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2026-09-05 16:30:56.472 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-xiaojiashu-127.0.0.1_8848] [subscribe] xiaojiashu-auth-dev.yaml+DEFAULT_GROUP+xiaojiashu
+2026-09-05 16:30:56.507 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-xiaojiashu-127.0.0.1_8848] [add-listener] ok, tenant=xiaojiashu, dataId=xiaojiashu-auth-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2026-09-05 16:30:56.508 [restartedMain] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=xiaojiashu-auth-dev.yaml, group=DEFAULT_GROUP
+2026-09-05 16:30:56.512 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-xiaojiashu-127.0.0.1_8848] [subscribe] xiaojiashu-auth+DEFAULT_GROUP+xiaojiashu
+2026-09-05 16:30:56.515 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-xiaojiashu-127.0.0.1_8848] [add-listener] ok, tenant=xiaojiashu, dataId=xiaojiashu-auth, group=DEFAULT_GROUP, cnt=1
+2026-09-05 16:30:56.518 [restartedMain] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=xiaojiashu-auth, group=DEFAULT_GROUP
+2026-09-05 16:30:56.526 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-xiaojiashu-127.0.0.1_8848] [subscribe] xiaojiashu-auth.yaml+DEFAULT_GROUP+xiaojiashu
+2026-09-05 16:30:56.527 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-xiaojiashu-127.0.0.1_8848] [add-listener] ok, tenant=xiaojiashu, dataId=xiaojiashu-auth.yaml, group=DEFAULT_GROUP, cnt=1
+2026-09-05 16:30:56.528 [restartedMain] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=xiaojiashu-auth.yaml, group=DEFAULT_GROUP
+2026-09-05 16:30:56.791 [RMI TCP Connection(3)-192.168.52.36] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-05 16:30:56.793 [RMI TCP Connection(3)-192.168.52.36] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-05 16:30:56.802 [RMI TCP Connection(3)-192.168.52.36] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-09-05 16:31:13.645 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [账号登出], 入参: "5", 请求类: UserController, 请求方法: logout =================================== 
+2026-09-05 16:31:13.820 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [账号登出], 耗时: 179ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
+2026-09-05 16:31:15.592 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-05 16:31:15.679 [Thread-22] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-05 16:31:15.682 [Thread-22] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2026-09-05 16:31:15.715 [Thread-22] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:31:15.716 [Thread-22] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:31:15.717 [Thread-22] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:31:15.718 [Thread-22] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-6] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:31:15.719 [Thread-22] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-7] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:31:15.721 [Thread-22] WARN  org.apache.catalina.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-eventExecutorLoop-1-8] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.15/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.15/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3465)
+ java.base@17.0.15/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3436)
+ java.base@17.0.15/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1630)
+ java.base@17.0.15/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor.takeTask(SingleThreadEventExecutor.java:244)
+ app//io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:64)
+ app//io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+ app//io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+ app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.base@17.0.15/java.lang.Thread.run(Thread.java:840)
+2026-09-05 16:31:15.733 [Thread-22] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2026-09-05 16:31:15.733 [Thread-22] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] xiaojiashu deregistering service xiaojiashu-auth with instance: Instance{instanceId='null', ip='192.168.52.36', port=8080, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2026-09-05 16:31:15.741 [Thread-22] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2026-09-05 16:31:15.743 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2026-09-05 16:31:15.743 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2026-09-05 16:31:15.744 [Thread-22] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2026-09-05 16:31:15.744 [Thread-22] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2026-09-05 16:31:15.744 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2026-09-05 16:31:15.745 [Thread-22] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2026-09-05 16:31:15.745 [Thread-22] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2026-09-05 16:31:15.745 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2026-09-05 16:31:15.745 [Thread-22] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2026-09-05 16:31:15.745 [Thread-22] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@4292d4c8[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2026-09-05 16:31:15.745 [Thread-22] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1788597053499_172.17.0.1_33032
+2026-09-05 16:31:15.754 [nacos-grpc-client-executor-127.0.0.1-13] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - [1788597053499_172.17.0.1_33032]Ignore complete event,isRunning:false,isAbandon=false
+2026-09-05 16:31:15.758 [Thread-22] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1f0b6e91[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 14]
+2026-09-05 16:31:15.758 [Thread-22] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@24985623[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 7]
+2026-09-05 16:31:15.759 [Thread-22] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2026-09-05 16:31:15.759 [Thread-22] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2026-09-05 16:31:15.759 [Thread-22] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2026-09-05 16:31:15.765 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-05 16:31:15.784 [Thread-22] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-05 16:31:17.915 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:31:17.933 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:31:19.575 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:31:19.596 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth] & group[DEFAULT_GROUP]
+2026-09-05 16:31:19.606 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth.yaml] & group[DEFAULT_GROUP]
+2026-09-05 16:31:19.615 [restartedMain] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[xiaojiashu-auth-dev.yaml] & group[DEFAULT_GROUP]
+2026-09-05 16:31:19.615 [restartedMain] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-xiaojiashu-auth,DEFAULT_GROUP'}]
+2026-09-05 16:31:19.660 [restartedMain] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2026-09-05 16:31:19.660 [restartedMain] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - The following 1 profile is active: "dev"
+2026-09-05 16:31:21.100 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-05 16:31:21.100 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-05 16:31:21.117 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-09-05 16:31:21.271 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=dd567026-bce5-3b5c-a976-c9544a4f1a4d
+2026-09-05 16:31:21.529 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-09-05 16:31:21.531 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-05 16:31:21.531 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2026-09-05 16:31:21.662 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-09-05 16:31:21.663 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1990 ms
+2026-09-05 16:31:21.912 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-09-05 16:31:22.064 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2026-09-05 16:31:23.921 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-09-05 16:31:24.475 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-09-05 16:31:24.526 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-05 16:31:24.527 [restartedMain] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2026-09-05 16:31:24.528 [restartedMain] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2026-09-05 16:31:24.528 [restartedMain] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2026-09-05 16:31:24.528 [restartedMain] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026-09-05 16:31:24.529 [restartedMain] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026-09-05 16:31:24.529 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of f4a071b8-c0fb-45fd-b35d-e4093baec0bf
+2026-09-05 16:31:24.530 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2026-09-05 16:31:24.530 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2026-09-05 16:31:24.530 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2026-09-05 16:31:24.530 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2026-09-05 16:31:24.531 [restartedMain] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2026-09-05 16:31:24.667 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1788597084543_172.17.0.1_58270
+2026-09-05 16:31:24.667 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2026-09-05 16:31:24.667 [restartedMain] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$619/0x000001d911503f18
+2026-09-05 16:31:24.667 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [f4a071b8-c0fb-45fd-b35d-e4093baec0bf] Notify connected event to listeners.
+2026-09-05 16:31:24.667 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2026-09-05 16:31:24.668 [restartedMain] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] xiaojiashu registering service xiaojiashu-auth with instance Instance{instanceId='null', ip='192.168.52.36', port=8080, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2026-09-05 16:31:24.676 [restartedMain] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP xiaojiashu-auth 192.168.52.36:8080 register finished
+2026-09-05 16:31:25.085 [restartedMain] INFO  c.j.xiaojiashu.auth.XiaojiashuAuthApplication - Started XiaojiashuAuthApplication in 8.922 seconds (process running for 51.001)
+2026-09-05 16:31:25.087 [restartedMain] INFO  c.j.x.auth.runner.PushRolePermissions2RedisRunner - ==> 服务启动，开始同步角色权限数据到 Redis 中...
+2026-09-05 16:31:25.136 [restartedMain] WARN  c.j.x.auth.runner.PushRolePermissions2RedisRunner - ==> 角色权限数据已经同步至 Redis 中，不再同步...
+2026-09-05 16:31:25.136 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-xiaojiashu-127.0.0.1_8848] [add-listener] ok, tenant=xiaojiashu, dataId=xiaojiashu-auth-dev.yaml, group=DEFAULT_GROUP, cnt=2
+2026-09-05 16:31:25.136 [restartedMain] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=xiaojiashu-auth-dev.yaml, group=DEFAULT_GROUP
+2026-09-05 16:31:25.137 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-xiaojiashu-127.0.0.1_8848] [add-listener] ok, tenant=xiaojiashu, dataId=xiaojiashu-auth, group=DEFAULT_GROUP, cnt=2
+2026-09-05 16:31:25.137 [restartedMain] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=xiaojiashu-auth, group=DEFAULT_GROUP
+2026-09-05 16:31:25.137 [restartedMain] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-xiaojiashu-127.0.0.1_8848] [add-listener] ok, tenant=xiaojiashu, dataId=xiaojiashu-auth.yaml, group=DEFAULT_GROUP, cnt=2
+2026-09-05 16:31:25.137 [restartedMain] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=xiaojiashu-auth.yaml, group=DEFAULT_GROUP
+2026-09-05 16:31:25.139 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-05 16:31:59.604 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-05 16:31:59.604 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-05 16:31:59.605 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-05 16:31:59.751 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录注册], 入参: {"phone":"15513003933","code":"598770","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2026-09-05 16:31:59.818 [http-nio-8080-exec-1] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id,password from t_user where phone=?
+2026-09-05 16:32:00.078 [http-nio-8080-exec-1] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 15513003933(String)
+2026-09-05 16:32:00.108 [http-nio-8080-exec-1] DEBUG c.j.x.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2026-09-05 16:32:00.112 [http-nio-8080-exec-1] INFO  c.j.xiaojiashu.auth.service.Impl.UserServiceImpl - ==> 用户是否注册, phone: 15513003933, userDO: {"id":5,"xiaojiashuId":null,"password":null,"nickname":null,"avatar":null,"birthday":null,"backgroundImg":null,"phone":null,"sex":null,"status":null,"introduction":null,"createTime":null,"updateTime":null,"isDeleted":null}
+2026-09-05 16:32:00.170 [http-nio-8080-exec-1] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录注册], 耗时: 424ms, 出参: {"success":true,"data":"alahtGfbFFJ3cZjGXId7DPiTatRBArMpMjBdiD1loslsedKrZFJ1cHrhbpVhxjwyBKqGktYf4YUa2y51w6gi4NLyxwIgHyQ5RUTorF677wn5VRBXDUA9QvjfHZHNd961","errorCode":null,"message":null} =================================== 
+2026-09-05 16:32:24.274 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [账号登出], 入参: "5", 请求类: UserController, 请求方法: logout =================================== 
+2026-09-05 16:32:24.296 [http-nio-8080-exec-3] INFO  c.j.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [账号登出], 耗时: 22ms, 出参: {"success":true,"data":null,"errorCode":null,"message":null} =================================== 
