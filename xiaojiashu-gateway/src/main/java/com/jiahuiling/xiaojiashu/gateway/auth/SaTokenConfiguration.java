@@ -27,10 +27,10 @@ public class SaTokenConfiguration {
                     SaRouter.match("/**")
                             .notMatch("/auth/user/login")
                             .notMatch("/auth/verification/code/send")
-                            .check(r->StpUtil.checkLogin());
+                            .check(r -> StpUtil.checkLogin());
 
 
-                    SaRouter.match("/auth/user/logout", r -> StpUtil.checkPermission("app:note:delete"));
+                    SaRouter.match("/auth/user/logout", r -> StpUtil.checkPermission("app:note:publish"));
 
 //                    SaRouter.match("/user/**", r -> StpUtil.checkPermission("user"));
 //                    SaRouter.match("/admin/**", r -> StpUtil.checkPermission("admin"));
@@ -48,7 +48,7 @@ public class SaTokenConfiguration {
                         throw new RuntimeException(e.getMessage());
                     }
                 })
-               ;
+                ;
     }
 
 }
