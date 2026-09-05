@@ -12,12 +12,15 @@ import com.jiahuiling.xiaojiashu.auth.domain.dataobject.RoleDO;
 import com.jiahuiling.xiaojiashu.auth.domain.dataobject.UserDO;
 import com.jiahuiling.xiaojiashu.auth.domain.dataobject.UserRoleDO;
 import com.jiahuiling.xiaojiashu.auth.domain.mapper.RoleDOMapper;
+import com.jiahuiling.xiaojiashu.auth.domain.mapper.RolePermissionDOMapper;
 import com.jiahuiling.xiaojiashu.auth.domain.mapper.UserDOMapper;
 import com.jiahuiling.xiaojiashu.auth.domain.mapper.UserRoleDOMapper;
 import com.jiahuiling.xiaojiashu.auth.enums.DeletedEnum;
 import com.jiahuiling.xiaojiashu.auth.enums.LoginTypeEnum;
 import com.jiahuiling.xiaojiashu.auth.enums.ResponseCodeEnum;
 import com.jiahuiling.xiaojiashu.auth.enums.StatusEnum;
+import com.jiahuiling.xiaojiashu.auth.filter.LoginUserContextHolder;
+import com.jiahuiling.xiaojiashu.auth.model.VO.user.UpdatePasswordReqVO;
 import com.jiahuiling.xiaojiashu.auth.model.VO.user.UserLoginReqVO;
 import com.jiahuiling.xiaojiashu.auth.service.UserService;
 import jakarta.annotation.Resource;
@@ -25,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -53,6 +57,8 @@ public class UserServiceImpl implements UserService {
     private TransactionTemplate transactionTemplate;
     @Resource
     private RoleDOMapper roleDOMapper;
+    @Resource
+    private PasswordEncoder passwordEncoder;
 
     /**
      * 登录与注册
@@ -97,9 +103,41 @@ public class UserServiceImpl implements UserService {
         return Response.success(tokenInfo.getTokenValue());
     }
 
+    /**
+     * 退出登录
+     *
+     * @return
+     */
     @Override
-    public Response<?> logout(Long userId) {
-        StpUtil.logout(userId);
+    public Response<?> logout() {
+        Long userId = LoginUserContextHolder.getUserId();
+        return Response.success();
+    }
+
+    /**
+     * 修改密码
+     *
+     * @param updatePasswordReqVO
+     * @return
+     */
+    @Override
+    public Response<?> updatePassword(UpdatePasswordReqVO updatePasswordReqVO) {
+        // 新密码
+        String newPassword = updatePasswordReqVO.getNewPassword();
+        // 密码加密
+        String encodePassword = passwordEncoder.encode(newPassword);
+
+        // 获取当前请求对应的用户 ID
+        Long userId = LoginUserContextHolder.getUserId();
+
+        UserDO userDO = UserDO.builder()
+                .id(userId)
+                .password(encodePassword)
+                .updateTime(LocalDateTime.now())
+                .build();
+        // 更新密码
+        userDOMapper.updateByPrimaryKeySelective(userDO);
+
         return Response.success();
     }
 
