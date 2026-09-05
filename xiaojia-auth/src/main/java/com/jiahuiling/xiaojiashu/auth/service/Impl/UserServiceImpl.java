@@ -4,6 +4,7 @@ import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
+import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.framework.jackson.util.JsonUtils;
 import com.jiahuiling.xiaojiashu.auth.constant.RedisKeyConstants;
@@ -72,8 +73,12 @@ public class UserServiceImpl implements UserService {
         Integer type = userLoginReqVO.getType();
         Long userId = null;
         LoginTypeEnum loginTypeEnum = LoginTypeEnum.valueOf(type);
+        if (Objects.isNull(loginTypeEnum)) {
+            throw new BizException(ResponseCodeEnum.LOGIN_TYPE_ERROR);
+        }
         switch (loginTypeEnum) {
-            case VERIFICATION_CODE:
+
+            case VERIFICATION_CODE://验证码
                 String verificationCode = userLoginReqVO.getCode();
                 Preconditions.checkArgument(StringUtils.isNoneBlank(verificationCode), "验证码不能为空");
                 String key = RedisKeyConstants.buildVerificationCodeKey(phone);
@@ -90,8 +95,29 @@ public class UserServiceImpl implements UserService {
                 }
 
                 break;
+
             case PASSWORD:
-                //todo
+                String password = userLoginReqVO.getPassword();
+                // 根据手机号查询
+                UserDO userDO1 = userDOMapper.selectByPhone(phone);
+
+                // 判断该手机号是否注册
+                if (Objects.isNull(userDO1)) {
+                    throw new BizException(ResponseCodeEnum.USER_NOT_FOUND);
+                }
+
+                // 拿到密文密码
+                String encodePassword = userDO1.getPassword();
+
+                // 匹配密码是否一致
+                boolean isPasswordCorrect = passwordEncoder.matches(password, encodePassword);
+
+                // 如果不正确，则抛出业务异常，提示用户名或者密码不正确
+                if (!isPasswordCorrect) {
+                    throw new BizException(ResponseCodeEnum.PHONE_OR_PASSWORD_ERROR);
+                }
+
+                userId = userDO1.getId();
                 break;
             default:
                 break;
