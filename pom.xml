@@ -21,6 +21,7 @@
         <module>xiaojia-auth</module>
         <module>xiaojia-framework</module>
         <module>xiaojiashu-gateway</module>
+        <module>xiaojiashu-oss</module>
     </modules>
 
     <properties>
@@ -51,6 +52,7 @@
         <hutool.version>5.8.26</hutool.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <nacos-config.version>0.3.0-RC</nacos-config.version>
+        <minio.version>8.2.1</minio.version>
     </properties>
 
     <!-- 统一依赖管理 -->
@@ -188,6 +190,12 @@
                 <version>${sa-token.version}</version>
             </dependency>
 
+            <!-- 对象存储 Minio -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
