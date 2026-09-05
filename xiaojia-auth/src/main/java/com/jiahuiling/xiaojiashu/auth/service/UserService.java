@@ -11,4 +11,5 @@ public interface UserService {
      * @return
      */
     Response<String> LoginAndRegister(UserLoginReqVO userLoginReqVO);
+    Response<?> logout(Long userId);
 }
