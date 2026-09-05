@@ -15,5 +15,11 @@
     <file url="file://$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-jackson/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaojiashu-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiaojiashu-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaojiashu-oss/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaojiashu-oss/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-biz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-biz/src/main/resources" charset="UTF-8" />
   </component>
 </project>
