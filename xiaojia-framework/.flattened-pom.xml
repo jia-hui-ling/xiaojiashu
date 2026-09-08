@@ -16,5 +16,6 @@
     <module>xiaojia-common</module>
     <module>xiaojia-spring-boot-starter-biz-operationlog</module>
     <module>xiaojia-spring-boot-starter-jackson</module>
+    <module>xiaojia-spring-boot-starter-biz-context</module>
   </modules>
 </project>

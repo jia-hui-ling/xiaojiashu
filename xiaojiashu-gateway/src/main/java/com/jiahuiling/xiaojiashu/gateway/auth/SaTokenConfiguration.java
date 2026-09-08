@@ -25,12 +25,12 @@ public class SaTokenConfiguration {
                 .addExclude("/favicon.ico")
                 .setAuth(obj -> {
                     SaRouter.match("/**")
-                            .notMatch("/auth/user/login")
+                            .notMatch("/auth/login")
                             .notMatch("/auth/verification/code/send")
                             .check(r -> StpUtil.checkLogin());
 
 
-                    SaRouter.match("/auth/user/logout", r -> StpUtil.checkPermission("app:note:publish"));
+                    SaRouter.match("/user/logout", r -> StpUtil.checkPermission("app:note:publish"));
 
 //                    SaRouter.match("/user/**", r -> StpUtil.checkPermission("user"));
 //                    SaRouter.match("/admin/**", r -> StpUtil.checkPermission("admin"));
