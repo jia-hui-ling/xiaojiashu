@@ -1,0 +1,2 @@
+com.jiahuiling.framework.biz.context.config.ContextAutoConfiguration
+com.jiahuiling.framework.biz.context.config.FeignContextAutoConfiguration

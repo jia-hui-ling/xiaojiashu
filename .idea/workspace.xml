@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="638e0048-4270-44b5-94a2-965b8665e98d" name="更改" comment="000">
+      <change afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/java/com/jiahuiling/framework/biz/context/config/FeignContextAutoConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/java/com/jiahuiling/framework/biz/context/interceptor/FeignRequestInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java/com/jiahuiling/xiaojiashu/oss/config/FeignFormConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/rpc/OssRpcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/user.2026-09-08-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/user.2026-09-08-0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/.flattened-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java/com/jiahuiling/xiaojiashu/oss/api/FileFeignApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java/com/jiahuiling/xiaojiashu/oss/api/FileFeignApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-biz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-biz/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/enums/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/enums/ResponseCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/service/Impl/UserServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="0c490899-7097-475c-afd1-4511e681d629" value="" />
+      <entry key="ccfbe7fb-72dd-47b4-9491-8000dcffdc46" value="" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="对象存储服务搭建" />
+        <option name="rewordedMessage" value="对象存储服务搭建" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="6f32d0e1f195535622cf92eb22270de57f058207" />
+  </component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\Program Files (x86)\Maven\apache-maven-3.6.3" />
+        <option name="localRepository" value="D:\Program Files (x86)\Maven\repository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="useMavenConfig" value="false" />
+        <option name="userSettingsFile" value="D:\Program Files (x86)\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000290074758" />
+      <entry key="S5" value="1.0009662509773176" />
+      <entry key="S10" value="1.031519456633157" />
+      <entry key="S30" value="1.3990662666201348" />
+      <entry key="S60" value="1.9702905078515" />
+      <entry key="M2" value="3.2200676835882236" />
+      <entry key="M5" value="6.769259420503583" />
+      <entry key="M10" value="10.557032735745079" />
+      <entry key="M15" value="13.576963799836797" />
+      <entry key="M30" value="22.51871225965467" />
+      <entry key="H1" value="37.267863623525486" />
+      <entry key="H2" value="62.83343325550868" />
+      <entry key="H4" value="145.59301096896922" />
+      <entry key="D1" value="961.2035682507174" />
+      <entry key="W1" value="1572.4252795129037" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="5.984299404409315E-67" />
+      <entry key="S2" value="2.781335176281879E-17" />
+      <entry key="S5" value="2.386175021114177E-7" />
+      <entry key="S10" value="4.89212049375009E-4" />
+      <entry key="S30" value="0.088231218059991" />
+      <entry key="S60" value="0.43259378695167655" />
+      <entry key="M2" value="1.5667835853613825" />
+      <entry key="M5" value="5.144547206113972" />
+      <entry key="M10" value="9.499681747401844" />
+      <entry key="M15" value="13.469976310849301" />
+      <entry key="M30" value="25.94685174065052" />
+      <entry key="H1" value="46.49870980967674" />
+      <entry key="H2" value="77.19591104436611" />
+      <entry key="H4" value="159.6956609160114" />
+      <entry key="D1" value="855.4001440463053" />
+      <entry key="W1" value="1338.4112683365984" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.579688909670069E-5" />
+      <entry key="MS500" value="0.10957571516450439" />
+      <entry key="S2" value="0.5753453405033806" />
+      <entry key="S5" value="0.8025901844960424" />
+      <entry key="S10" value="0.9272866063997773" />
+      <entry key="S30" value="1.448779405027457" />
+      <entry key="S60" value="2.3772781034630626" />
+      <entry key="M2" value="4.758035173054987" />
+      <entry key="M5" value="11.875273007814421" />
+      <entry key="M10" value="20.01961131728687" />
+      <entry key="M15" value="27.011312014885107" />
+      <entry key="M30" value="48.429500780895765" />
+      <entry key="H1" value="83.73271421419976" />
+      <entry key="H2" value="140.00132577655566" />
+      <entry key="H4" value="305.2611207386066" />
+      <entry key="D1" value="1816.5796063575574" />
+      <entry key="W1" value="2910.831138833697" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3IlYPTJkk7ZAxqmyVplFSJUGMQY" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "HTTP 请求.generated-requests | #58.executor": "Run",
+    "HTTP 请求.generated-requests | #59.executor": "Run",
+    "HTTP 请求.generated-requests | #61.executor": "Run",
+    "HTTP 请求.generated-requests | #62.executor": "Run",
+    "JUnit.XiaojiashuAuthApplicationTests.RedisTest.executor": "Run",
+    "JUnit.XiaojiashuAuthApplicationTests.contextLoads.executor": "Run",
+    "JUnit.XiaojiashuAuthApplicationTests.testSubmit.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.xiaohashu [clean].executor": "Run",
+    "Maven.xiaohashu [install].executor": "Run",
+    "Maven.xiaohashu [package].executor": "Run",
+    "Maven.xiaojia-auth [clean].executor": "Run",
+    "Maven.xiaojia-auth [org.mybatis.generator:mybatis-generator-maven-plugin:1.3.5:generate].executor": "Run",
+    "Maven.xiaojia-auth [package].executor": "Run",
+    "Maven.xiaojia-framework [clean].executor": "Run",
+    "Maven.xiaojia-framework [package].executor": "Run",
+    "Maven.xiaojia-spring-boot-starter-biz-context [clean].executor": "Run",
+    "Maven.xiaojia-spring-boot-starter-biz-context [install].executor": "Run",
+    "Maven.xiaojia-spring-boot-starter-biz-context [package].executor": "Run",
+    "Maven.xiaojiashu [clean].executor": "Run",
+    "Maven.xiaojiashu [install].executor": "Run",
+    "Maven.xiaojiashu [package].executor": "Run",
+    "Maven.xiaojiashu-user-biz [org.mybatis.generator:mybatis-generator-maven-plugin:1.3.5:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHELLCHECK.PATH": "我会在意",
+    "Spring Boot.XiaohashuGatewayApplication.executor": "Run",
+    "Spring Boot.XiaojiashuAuthApplication (1).executor": "Run",
+    "Spring Boot.XiaojiashuAuthApplication.executor": "Run",
+    "Spring Boot.XiaojiashuBizApplication.executor": "Run",
+    "Spring Boot.XiaojiashuGatewayApplication.executor": "Run",
+    "Spring Boot.XiaojiashuOssApplication.executor": "Run",
+    "Spring Boot.XiaojiashuUserBizApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/jiahuiling/Java/xiaojiashu/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.22753906",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "应用程序.PasswordEncoderConfig.executor": "Run"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\java\com\jiahuiling\xiaojiashu\user\biz" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\resources" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-oss\xiaojiashu-oss-biz\src\main\java\com\jiahuiling\xiaojiashu\oss\biz" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-oss\xiaojiashu-oss-biz\src\main\resources" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojia-framework\xiaojia-spring-boot-starter-jackson\src\main\java\com\jiahuiling\starter\jackson" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\java\com\jiahuiling\xiaojiashu\user\biz\service" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojia-framework\xiaojia-spring-boot-starter-biz-context\src\main\java\com\jiahuiling\framework\biz\context" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\java\com\jiahuiling\xiaojiashu\user\biz" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\resources/config" />
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-oss\xiaojiashu-oss-biz\src\main\java\com\jiahuiling\xiaojiashu\oss\biz" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.jiahuiling.framework.common.validator" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.jiahuiling.xiaojiashu.user.biz.service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jiahuiling.framework.biz.context.holder" />
+      <recent name="com.jiahuiling.framework.biz.context.constant" />
+      <recent name="com.jiahuiling.framework.biz.context.filter" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="XiaojiashuAuthApplication" value="STOPPED" />
+              <entry key="XiaojiashuGatewayApplication" value="STOPPED" />
+              <entry key="XiaojiashuOssApplication" value="STOPPED" />
+              <entry key="XiaojiashuUserBizApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.XiaojiashuUserBizApplication">
+    <configuration name="XiaojiashuAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="xiaojia-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jiahuiling.xiaojiashu.auth.XiaojiashuAuthApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jiahuiling.xiaojiashu.auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XiaojiashuGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="xiaojiashu-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jiahuiling.xiaojiashu.gateway.XiaojiashuGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jiahuiling.xiaojiashu.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XiaojiashuOssApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xiaojiashu-oss-biz" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jiahuiling.xiaojiashu.oss.biz.XiaojiashuOssApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jiahuiling.xiaojiashu.oss.biz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XiaojiashuUserBizApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="xiaojiashu-user-biz" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jiahuiling.xiaojiashu.user.biz.XiaojiashuUserBizApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jiahuiling.xiaojiashu.user.biz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.XiaojiashuAuthApplication" />
+      <item itemvalue="Spring Boot.XiaojiashuGatewayApplication" />
+      <item itemvalue="Spring Boot.XiaojiashuUserBizApplication" />
+      <item itemvalue="Spring Boot.XiaojiashuOssApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.XiaojiashuUserBizApplication" />
+        <item itemvalue="Spring Boot.XiaojiashuGatewayApplication" />
+        <item itemvalue="Spring Boot.XiaojiashuAuthApplication" />
+        <item itemvalue="Spring Boot.XiaojiashuOssApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.258" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.258" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="638e0048-4270-44b5-94a2-965b8665e98d" name="更改" comment="" />
+      <created>1788340603227</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788340603227</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基础模块" />
+    <MESSAGE value="请求日志切面业务" />
+    <MESSAGE value="整合 MyBatis 持久层框架以及 Druid 数据库连接池" />
+    <MESSAGE value="整合 MyBatis 代码生成器以及 Jakson-starter" />
+    <MESSAGE value="整合logback日志框架以及flatten-maven-plugin插件（解决子模块单独打包的问题）" />
+    <MESSAGE value="整合satoken权限认证框架，整合redistemplate，书写发送短信验证码接口" />
+    <MESSAGE value="自定义@PhoneNumber,satoken整合redis" />
+    <MESSAGE value="用户登录注册接口开发（编程式事务）" />
+    <MESSAGE value="Guava 参数校验，同步角色权限到redis中" />
+    <MESSAGE value="Gateway网关搭建，整合satoken实现接口鉴权，自定义token生成模式" />
+    <MESSAGE value="网关异常处理，统一出参格式，登录校验信息优化" />
+    <MESSAGE value="网关过滤器" />
+    <MESSAGE value="登出接口开发，热更新DevTools yml配置文件中配置，解决重启 + JMX Admin MBean 重复注册 的问题" />
+    <MESSAGE value="auth过滤器+threadLocal实现上下文传递，以及修改密码功能" />
+    <MESSAGE value="实现密码登录功能" />
+    <MESSAGE value="合并对象存储和密码登录功能" />
+    <MESSAGE value="对象存储服务搭建" />
+    <MESSAGE value="000" />
+    <option name="LAST_COMMIT_MESSAGE" value="000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

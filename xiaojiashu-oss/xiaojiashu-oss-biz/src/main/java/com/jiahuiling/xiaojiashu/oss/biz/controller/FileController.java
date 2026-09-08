@@ -1,5 +1,6 @@
 package com.jiahuiling.xiaojiashu.oss.biz.controller;
 
+import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.xiaojiashu.oss.biz.service.FileService;
 import jakarta.annotation.Resource;
@@ -27,5 +28,11 @@ public class FileController {
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Response<?> uploadFile(@RequestPart(value = "file") MultipartFile file) {
         return fileService.uploadFile(file);
+    }
+
+    @PostMapping(value = "/test")
+    @ApiOperationLog(description = "Feign 测试接口")
+    public Response<?> test() {
+        return Response.success();
     }
 }
