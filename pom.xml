@@ -227,6 +227,13 @@
                 <version>${feign-form.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.jiahuiling</groupId>
+                <artifactId>xiaojiashu-user-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

@@ -4,22 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="638e0048-4270-44b5-94a2-965b8665e98d" name="更改" comment="000">
-      <change afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/java/com/jiahuiling/framework/biz/context/config/FeignContextAutoConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/java/com/jiahuiling/framework/biz/context/interceptor/FeignRequestInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java/com/jiahuiling/xiaojiashu/oss/config/FeignFormConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/rpc/OssRpcService.java" afterDir="false" />
+    <list default="true" id="638e0048-4270-44b5-94a2-965b8665e98d" name="更改" comment="代码重构，auth-&gt;user,用户注册、手机号查询用户信息、密码更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/auth.2026-09-04-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/auth.2026-09-04-0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/auth.2026-09-05-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/auth.2026-09-05-0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/auth.2026-09-08-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/auth.2026-09-08-0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/oss.2026-09-08-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/oss.2026-09-08-0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/user.2026-09-08-0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/user.2026-09-08-0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/.flattened-pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java/com/jiahuiling/xiaojiashu/oss/api/FileFeignApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-api/src/main/java/com/jiahuiling/xiaojiashu/oss/api/FileFeignApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-biz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-oss/xiaojiashu-oss-biz/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/enums/ResponseCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/enums/ResponseCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/java/com/jiahuiling/xiaojiashu/user/biz/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/XiaojiashuAuthApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/XiaojiashuAuthApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/service/Impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/src/main/java/com/jiahuiling/xiaojiashu/auth/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-auth/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-auth/src/main/resources/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/java/com/jiahuiling/framework/biz/context/config/FeignContextAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojia-framework/xiaojia-spring-boot-starter-biz-context/src/main/java/com/jiahuiling/framework/biz/context/config/FeignContextAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/xiaojiashu-user/xiaojiashu-user-biz/src/main/resources/config/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,59 +81,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000290074758" />
-      <entry key="S5" value="1.0009662509773176" />
-      <entry key="S10" value="1.031519456633157" />
-      <entry key="S30" value="1.3990662666201348" />
-      <entry key="S60" value="1.9702905078515" />
-      <entry key="M2" value="3.2200676835882236" />
-      <entry key="M5" value="6.769259420503583" />
-      <entry key="M10" value="10.557032735745079" />
-      <entry key="M15" value="13.576963799836797" />
-      <entry key="M30" value="22.51871225965467" />
-      <entry key="H1" value="37.267863623525486" />
-      <entry key="H2" value="62.83343325550868" />
-      <entry key="H4" value="145.59301096896922" />
-      <entry key="D1" value="961.2035682507174" />
-      <entry key="W1" value="1572.4252795129037" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000000038574" />
+      <entry key="S30" value="1.0002436402255264" />
+      <entry key="S60" value="1.0251047305847465" />
+      <entry key="M2" value="1.3465236771260831" />
+      <entry key="M5" value="3.8955870863365183" />
+      <entry key="M10" value="10.325379804943797" />
+      <entry key="M15" value="17.389550933562262" />
+      <entry key="M30" value="38.128145850196084" />
+      <entry key="H1" value="71.04111950471027" />
+      <entry key="H2" value="115.26389300434857" />
+      <entry key="H4" value="201.3924047029973" />
+      <entry key="D1" value="1020.3659128902927" />
+      <entry key="W1" value="1678.1635511191375" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.984299404409315E-67" />
-      <entry key="S2" value="2.781335176281879E-17" />
-      <entry key="S5" value="2.386175021114177E-7" />
-      <entry key="S10" value="4.89212049375009E-4" />
-      <entry key="S30" value="0.088231218059991" />
-      <entry key="S60" value="0.43259378695167655" />
-      <entry key="M2" value="1.5667835853613825" />
-      <entry key="M5" value="5.144547206113972" />
-      <entry key="M10" value="9.499681747401844" />
-      <entry key="M15" value="13.469976310849301" />
-      <entry key="M30" value="25.94685174065052" />
-      <entry key="H1" value="46.49870980967674" />
-      <entry key="H2" value="77.19591104436611" />
-      <entry key="H4" value="159.6956609160114" />
-      <entry key="D1" value="855.4001440463053" />
-      <entry key="W1" value="1338.4112683365984" />
+      <entry key="MS500" value="1.4059293476071735E-227" />
+      <entry key="S2" value="5.420205993666836E-57" />
+      <entry key="S5" value="1.0632927508989177E-22" />
+      <entry key="S10" value="3.296058034209139E-11" />
+      <entry key="S30" value="0.0016446427794736427" />
+      <entry key="S60" value="0.14210473498126855" />
+      <entry key="M2" value="1.3724978239318277" />
+      <entry key="M5" value="5.944392130588765" />
+      <entry key="M10" value="13.007294172865828" />
+      <entry key="M15" value="20.769428259670832" />
+      <entry key="M30" value="42.76468998795244" />
+      <entry key="H1" value="75.85448089053165" />
+      <entry key="H2" value="121.18410645230152" />
+      <entry key="H4" value="206.91487309970708" />
+      <entry key="D1" value="912.7921337433692" />
+      <entry key="W1" value="1437.3308857001027" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.579688909670069E-5" />
-      <entry key="MS500" value="0.10957571516450439" />
-      <entry key="S2" value="0.5753453405033806" />
-      <entry key="S5" value="0.8025901844960424" />
-      <entry key="S10" value="0.9272866063997773" />
-      <entry key="S30" value="1.448779405027457" />
-      <entry key="S60" value="2.3772781034630626" />
-      <entry key="M2" value="4.758035173054987" />
-      <entry key="M5" value="11.875273007814421" />
-      <entry key="M10" value="20.01961131728687" />
-      <entry key="M15" value="27.011312014885107" />
-      <entry key="M30" value="48.429500780895765" />
-      <entry key="H1" value="83.73271421419976" />
-      <entry key="H2" value="140.00132577655566" />
-      <entry key="H4" value="305.2611207386066" />
-      <entry key="D1" value="1816.5796063575574" />
-      <entry key="W1" value="2910.831138833697" />
+      <entry key="MS100" value="8.5606027472269E-4" />
+      <entry key="MS500" value="0.24350106713581024" />
+      <entry key="S2" value="0.7024658517984493" />
+      <entry key="S5" value="0.8682605857336586" />
+      <entry key="S10" value="0.9318050149028263" />
+      <entry key="S30" value="0.9785758991198455" />
+      <entry key="S60" value="1.1534726381583051" />
+      <entry key="M2" value="2.7015879594696703" />
+      <entry key="M5" value="9.810717209726478" />
+      <entry key="M10" value="23.292454700269836" />
+      <entry key="M15" value="38.111427056538695" />
+      <entry key="M30" value="80.83968321026231" />
+      <entry key="H1" value="146.84661835767608" />
+      <entry key="H2" value="236.40779199453522" />
+      <entry key="H4" value="408.27284342355614" />
+      <entry key="D1" value="1933.132493298675" />
+      <entry key="W1" value="3115.488654428514" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -230,11 +230,11 @@
       <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojia-framework\xiaojia-spring-boot-starter-jackson\src\main\java\com\jiahuiling\starter\jackson" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\resources" />
       <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\java\com\jiahuiling\xiaojiashu\user\biz\service" />
       <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojia-framework\xiaojia-spring-boot-starter-biz-context\src\main\java\com\jiahuiling\framework\biz\context" />
       <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\java\com\jiahuiling\xiaojiashu\user\biz" />
       <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-user\xiaojiashu-user-biz\src\main\resources/config" />
-      <recent name="D:\jiahuiling\Java\xiaojiashu\xiaojiashu-oss\xiaojiashu-oss-biz\src\main\java\com\jiahuiling\xiaojiashu\oss\biz" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.jiahuiling.framework.common.validator" />
@@ -243,6 +243,8 @@
       <recent name="com.jiahuiling.xiaojiashu.user.biz.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jiahuiling.xiaojiashu.user.dto.req" />
+      <recent name="com.jiahuiling.xiaojiashu.user.biz.config" />
       <recent name="com.jiahuiling.framework.biz.context.holder" />
       <recent name="com.jiahuiling.framework.biz.context.constant" />
       <recent name="com.jiahuiling.framework.biz.context.filter" />
@@ -405,7 +407,9 @@
     <MESSAGE value="合并对象存储和密码登录功能" />
     <MESSAGE value="对象存储服务搭建" />
     <MESSAGE value="000" />
-    <option name="LAST_COMMIT_MESSAGE" value="000" />
+    <MESSAGE value="用户服务搭建" />
+    <MESSAGE value="代码重构，auth-&gt;user,用户注册、手机号查询用户信息、密码更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码重构，auth-&gt;user,用户注册、手机号查询用户信息、密码更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

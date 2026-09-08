@@ -18,7 +18,7 @@
     <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, xiaojiashu_id, `password`, nickname, avatar, birthday, background_img, phone, 
+    id, xiaojiashu_id, `password`, nickname, avatar, birthday, background_img, phone,
     sex, `status`, introduction, create_time, update_time, is_deleted
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -31,13 +31,13 @@
     delete from t_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.jiahuiling.xiaojiashu.user.biz.domain.dataobject.UserDO">
-    insert into t_user (id, xiaojiashu_id, `password`, 
+  <insert id="insert" parameterType="com.jiahuiling.xiaojiashu.user.biz.domain.dataobject.UserDO" useGeneratedKeys="true" keyProperty="id">
+    insert into t_user (xiaojiashu_id, `password`,
       nickname, avatar, birthday, 
       background_img, phone, sex, 
       `status`, introduction, create_time, 
       update_time, is_deleted)
-    values (#{id,jdbcType=BIGINT}, #{xiaojiashuId,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{xiaojiashuId,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{nickname,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
       #{backgroundImg,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, 
       #{status,jdbcType=TINYINT}, #{introduction,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
@@ -196,4 +196,7 @@
       is_deleted = #{isDeleted,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByPhone" resultMap="BaseResultMap">
+    select id,password from t_user where phone=#{phone}
+  </select>
 </mapper>

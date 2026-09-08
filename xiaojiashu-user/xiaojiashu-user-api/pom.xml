@@ -7,7 +7,6 @@
         <version>${revision}</version>
     </parent>
 
-    <groupId>com.jiahuiling.xiaojiashu.user.api</groupId>
     <artifactId>xiaojiashu-user-api</artifactId>
     <packaging>jar</packaging>
 
@@ -25,5 +24,18 @@
             <groupId>com.jiahuiling</groupId>
             <artifactId>xiaojia-common</artifactId>
         </dependency>
+
+        <!-- OpenFeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- 负载均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
