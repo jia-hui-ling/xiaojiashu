@@ -2357,7 +2357,7 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 org.springframework.jdbc.BadSqlGrammarException: 
 ### Error updating database.  Cause: java.sql.SQLException: Column count doesn't match value count at row 1
 ### The error may exist in file [D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes\mapper\UserDOMapper.xml]
-### The error may involve com.jiahuiling.xiaojiashu.auth.domain.mapper.UserDOMapper.insert-Inline
+### The error may involve com.jiahuiling.xiaojiashu.user.biz.domain.mapper.UserDOMapper.insert-Inline
 ### The error occurred while setting parameters
 ### SQL: insert into t_user (xiaojiashu_id, `password`,       nickname, avatar, birthday,        background_img, phone, sex,        `status`, introduction, create_time,        update_time, is_deleted)     values (?, ?, ?,       ?, ?, ?,        ?, ?, ?,        ?, ?, ?,        ?, ?)
 ### Cause: java.sql.SQLException: Column count doesn't match value count at row 1
@@ -2374,16 +2374,16 @@ org.springframework.jdbc.BadSqlGrammarException:
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
 	at jdk.proxy2/jdk.proxy2.$Proxy96.insert(Unknown Source)
-	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.registerUser(UserServiceImpl.java:108)
-	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.LoginAndRegister(UserServiceImpl.java:75)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.AuthServiceImpl.registerUser(UserServiceImpl.java:108)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.AuthServiceImpl.LoginAndRegister(UserServiceImpl.java:75)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:699)
-	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl$$SpringCGLIB$$0.LoginAndRegister(<generated>)
-	at com.jiahuiling.xiaojiashu.auth.controller.UserController.loginAndRegister(UserController.java:30)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.AuthServiceImpl$$SpringCGLIB$$0.LoginAndRegister(<generated>)
+	at com.jiahuiling.xiaojiashu.auth.controller.AuthController.loginAndRegister(UserController.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2407,7 +2407,7 @@ org.springframework.jdbc.BadSqlGrammarException:
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
-	at com.jiahuiling.xiaojiashu.auth.controller.UserController$$SpringCGLIB$$0.loginAndRegister(<generated>)
+	at com.jiahuiling.xiaojiashu.auth.controller.AuthController$$SpringCGLIB$$0.loginAndRegister(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2536,7 +2536,7 @@ Caused by: java.sql.SQLException: Column count doesn't match value count at row 
 org.springframework.dao.DataIntegrityViolationException: 
 ### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'is_deleted' cannot be null
 ### The error may exist in file [D:\jiahuiling\Java\xiaojiashu\xiaojia-auth\target\classes\mapper\UserRoleDOMapper.xml]
-### The error may involve com.jiahuiling.xiaojiashu.auth.domain.mapper.UserRoleDOMapper.insert-Inline
+### The error may involve com.jiahuiling.xiaojiashu.user.biz.domain.mapper.UserRoleDOMapper.insert-Inline
 ### The error occurred while setting parameters
 ### SQL: insert into t_user_role_rel (id, user_id, role_id,        create_time, update_time, is_deleted       )     values (?, ?, ?,        ?, ?, ?       )
 ### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'is_deleted' cannot be null
@@ -2552,16 +2552,16 @@ org.springframework.dao.DataIntegrityViolationException:
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
 	at jdk.proxy2/jdk.proxy2.$Proxy97.insert(Unknown Source)
-	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.registerUser(UserServiceImpl.java:119)
-	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl.LoginAndRegister(UserServiceImpl.java:75)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.AuthServiceImpl.registerUser(UserServiceImpl.java:119)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.AuthServiceImpl.LoginAndRegister(UserServiceImpl.java:75)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:699)
-	at com.jiahuiling.xiaojiashu.auth.service.Impl.UserServiceImpl$$SpringCGLIB$$0.LoginAndRegister(<generated>)
-	at com.jiahuiling.xiaojiashu.auth.controller.UserController.loginAndRegister(UserController.java:30)
+	at com.jiahuiling.xiaojiashu.auth.service.Impl.AuthServiceImpl$$SpringCGLIB$$0.LoginAndRegister(<generated>)
+	at com.jiahuiling.xiaojiashu.auth.controller.AuthController.loginAndRegister(UserController.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2585,7 +2585,7 @@ org.springframework.dao.DataIntegrityViolationException:
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
-	at com.jiahuiling.xiaojiashu.auth.controller.UserController$$SpringCGLIB$$0.loginAndRegister(<generated>)
+	at com.jiahuiling.xiaojiashu.auth.controller.AuthController$$SpringCGLIB$$0.loginAndRegister(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

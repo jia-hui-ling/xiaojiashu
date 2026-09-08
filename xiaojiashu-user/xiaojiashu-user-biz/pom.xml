@@ -88,6 +88,30 @@
             <artifactId>xiaojiashu-oss-api</artifactId>
         </dependency>
 
+        <!-- Redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!-- Redis 连接池 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jiahuiling</groupId>
+            <artifactId>xiaojiashu-user-api</artifactId>
+        </dependency>
+
+
+
 
     </dependencies>
 
