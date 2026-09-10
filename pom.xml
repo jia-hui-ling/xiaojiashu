@@ -23,6 +23,7 @@
         <module>xiaojiashu-gateway</module>
         <module>xiaojiashu-oss</module>
         <module>xiaojiashu-user</module>
+        <module>xiaojiashu-kv</module>
     </modules>
 
     <properties>
@@ -230,6 +231,12 @@
             <dependency>
                 <groupId>com.jiahuiling</groupId>
                 <artifactId>xiaojiashu-user-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jiahuiling</groupId>
+                <artifactId>xiaojiashu-kv-api</artifactId>
                 <version>${revision}</version>
             </dependency>
 

@@ -88,10 +88,10 @@
         </dependency>
 
         <!-- Nacos 配置中心 -->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.boot</groupId>-->
-<!--            <artifactId>nacos-config-spring-boot-starter</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba.boot</groupId>-->
+        <!--            <artifactId>nacos-config-spring-boot-starter</artifactId>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -131,6 +131,12 @@
         <dependency>
             <groupId>com.jiahuiling</groupId>
             <artifactId>xiaojiashu-user-api</artifactId>
+        </dependency>
+
+        <!-- 上下文组件 -->
+        <dependency>
+            <groupId>com.jiahuiling</groupId>
+            <artifactId>xiaojia-spring-boot-starter-biz-context</artifactId>
         </dependency>
 
 
