@@ -19,6 +19,12 @@ data/minio/.minio.sys/buckets/.usage-cache.bin/
 data/minio/.minio.sys/buckets/.usage.json/
 data/minio/.minio.sys/buckets/*/.usage-cache.bin/
 
+# Cassandra runtime data and SSTables
+data/cassandra/*
+!data/cassandra/
+!data/cassandra/hints/
+!data/cassandra/hints/.gitkeep
+
 # OS generated files
 Thumbs.db
 Desktop.ini
