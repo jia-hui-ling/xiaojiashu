@@ -24,6 +24,7 @@
         <module>xiaojiashu-oss</module>
         <module>xiaojiashu-user</module>
         <module>xiaojiashu-kv</module>
+        <module>xiaojiashu-distributed-id-generator</module>
     </modules>
 
     <properties>
@@ -239,6 +240,13 @@
                 <artifactId>xiaojiashu-kv-api</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.jiahuiling</groupId>
+                <artifactId>xiaojiashu-distributed-id-generator-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
 
 
         </dependencies>
