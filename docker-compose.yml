@@ -1,0 +1,118 @@
+# =====================================================================
+# 小贾书（xiaojiashu）本地开发基础设施（MySQL 使用本机原生安装）
+#
+# 前置条件：
+#   1. 本机安装并启动 MySQL 8.x（默认 3306、root/123456），先导入数据库：
+#        mysql -uroot -p123456 --default-character-set=utf8mb4 -e "source sql/mysql-backup.sql"
+#        mysql -uroot -p123456 --default-character-set=utf8mb4 -e "source sql/nacos-config.sql"
+#      （nacos-config.sql 会自动创建 Nacos 容器使用的 nacos/nacos 账号，需用 root 执行）
+#   2. 安装并启动 Docker Desktop
+#   3. 在项目根目录执行： docker compose up -d
+#      - Cassandra 首次就绪后自动执行 sql/cassandra-xiaojiashu.cql
+#      - MinIO 启动后自动创建 xiaojiashu 桶并设为公开读
+#      - Nacos 的命名空间和配置随 nacos_config 库一起恢复
+#
+# 说明：Nacos 容器通过 host.docker.internal 访问原生 MySQL，
+#       若 Nacos 连不上库，检查 MySQL 的 bind-address 是否监听 0.0.0.0（或放行容器网段）。
+# =====================================================================
+
+services:
+
+  redis:
+    image: redis:7.2.3
+    ports:
+      - "6379:6379"
+    command: [ "redis-server", "/etc/redis/redis.conf" ]
+    volumes:
+      - ./docker/redis.conf:/etc/redis/redis.conf:ro
+      - redis-data:/data
+    restart: unless-stopped
+
+  zookeeper:
+    image: zookeeper:3.5.6
+    ports:
+      - "2181:2181"
+    environment:
+      TZ: Asia/Shanghai
+      ZOO_STANDALONE_ENABLED: "true"
+    volumes:
+      - zookeeper-data:/data
+    restart: unless-stopped
+
+  nacos:
+    image: nacos/nacos-server:v2.2.3
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    environment:
+      MODE: standalone
+      SPRING_DATASOURCE_PLATFORM: mysql
+      MYSQL_SERVICE_HOST: host.docker.internal
+      MYSQL_SERVICE_PORT: "3306"
+      MYSQL_SERVICE_DB_NAME: nacos_config
+      MYSQL_SERVICE_USER: nacos
+      MYSQL_SERVICE_PASSWORD: nacos
+      JVM_XMS: 512m
+      JVM_XMX: 512m
+      JVM_XMN: 256m
+      TZ: Asia/Shanghai
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  cassandra:
+    image: cassandra:5.0.9
+    ports:
+      - "9042:9042"
+    volumes:
+      - ./data/cassandra:/var/lib/cassandra
+    restart: unless-stopped
+
+  # 等待 Cassandra 就绪后执行 keyspace / 表初始化脚本
+  cassandra-init:
+    image: cassandra:5.0.9
+    depends_on:
+      - cassandra
+    volumes:
+      - ./sql/cassandra-xiaojiashu.cql:/cql/init.cql:ro
+    entrypoint:
+      - /bin/sh
+      - -c
+      - >
+        until cqlsh cassandra 9042 -e 'DESCRIBE KEYSPACES' >/dev/null 2>&1; do sleep 5; done;
+        cqlsh cassandra 9042 -f /cql/init.cql;
+        echo 'cassandra keyspace xiaojiashu ready';
+    restart: "no"
+
+  minio:
+    image: minio/minio:RELEASE.2023-09-30T07-02-29Z
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    environment:
+      MINIO_ROOT_USER: jiahuiling
+      MINIO_ROOT_PASSWORD: jiahuiling
+    command: server /data --console-address ":9090"
+    volumes:
+      - ./data/minio:/data
+    restart: unless-stopped
+
+  # 等待 MinIO 就绪后创建 xiaojiashu 桶并设为公开读（头像等文件直链访问需要）
+  minio-init:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint:
+      - /bin/sh
+      - -c
+      - >
+        until mc alias set local http://minio:9000 jiahuiling jiahuiling >/dev/null 2>&1; do sleep 2; done;
+        mc mb --ignore-existing local/xiaojiashu;
+        mc anonymous set public local/xiaojiashu;
+        echo 'minio bucket xiaojiashu ready';
+    restart: "no"
+
+volumes:
+  redis-data:
+  zookeeper-data:

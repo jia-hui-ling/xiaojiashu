@@ -4,6 +4,19 @@ target/
 !**/src/test/**/target/
 .kotlin
 
+# Maven generated files
+.flattened-pom.xml
+
+# Local runtime data and environment files
+logs/
+.env
+.env.*
+!.env.example
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
