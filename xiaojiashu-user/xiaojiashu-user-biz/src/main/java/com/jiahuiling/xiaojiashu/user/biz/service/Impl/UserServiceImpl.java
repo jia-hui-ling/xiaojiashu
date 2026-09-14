@@ -1,13 +1,11 @@
 package com.jiahuiling.xiaojiashu.user.biz.service.Impl;
 
-import com.alibaba.nacos.client.utils.ParamUtil;
 import com.alibaba.nacos.shaded.com.google.common.base.Preconditions;
 import com.jiahuiling.framework.biz.context.holder.LoginUserContextHolder;
 import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.framework.common.util.ParamUtils;
 import com.jiahuiling.framework.jackson.util.JsonUtils;
-import com.jiahuiling.xiaojiashu.oss.api.FileFeignApi;
 import com.jiahuiling.xiaojiashu.user.biz.constant.RedisKeyConstants;
 import com.jiahuiling.xiaojiashu.user.biz.constant.RoleConstants;
 import com.jiahuiling.xiaojiashu.user.biz.domain.dataobject.RoleDO;
@@ -21,6 +19,7 @@ import com.jiahuiling.xiaojiashu.user.biz.enums.ResponseCodeEnum;
 import com.jiahuiling.xiaojiashu.user.biz.enums.SexEnum;
 import com.jiahuiling.xiaojiashu.user.biz.enums.StatusEnum;
 import com.jiahuiling.xiaojiashu.user.biz.model.vo.UpdateUserInfoReqVO;
+import com.jiahuiling.xiaojiashu.user.biz.rpc.DistributedIdGeneratorRpcService;
 import com.jiahuiling.xiaojiashu.user.biz.rpc.OssRpcService;
 import com.jiahuiling.xiaojiashu.user.biz.service.UserService;
 import com.jiahuiling.xiaojiashu.user.dto.req.FindUserByPhoneReqDTO;
@@ -32,6 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
@@ -58,6 +58,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private RoleDOMapper roleDOMapper;
+
+    @Resource
+    private DistributedIdGeneratorRpcService distributedIdGeneratorRpcService;
 
     /**
      * 更新用户信息
@@ -97,10 +100,10 @@ public class UserServiceImpl implements UserService {
         }
 
         // 小哈书号
-        String xiaojiahsu = updateUserInfoReqVO.getXiaojiashuId();
-        if (StringUtils.isNotBlank(xiaojiahsu)) {
-            Preconditions.checkArgument(ParamUtils.checkXiaohashuId(xiaojiahsu), ResponseCodeEnum.XIAOJIASHU_ID_VALID_FAIL.getErrorMessage());
-            userDO.setXiaojiashuId(xiaojiahsu);
+        String xiaojiashu = updateUserInfoReqVO.getXiaojiashuId();
+        if (StringUtils.isNotBlank(xiaojiashu)) {
+            Preconditions.checkArgument(ParamUtils.checkXiaohashuId(xiaojiashu), ResponseCodeEnum.XIAOJIASHU_ID_VALID_FAIL.getErrorMessage());
+            userDO.setXiaojiashuId(xiaojiashu);
             needUpdate = true;
         }
 
@@ -151,6 +154,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public Response<Long> register(RegisterUserReqDTO registerUserReqDTO) {
         String phone = registerUserReqDTO.getPhone();
         // 先判断该手机号是否已被注册
@@ -164,7 +168,10 @@ public class UserServiceImpl implements UserService {
 
         // 否则注册新用户
         // 获取全局自增的小哈书 ID
-        Long xiaojiashuId = redisTemplate.opsForValue().increment(RedisKeyConstants.XIAOJIASHU_ID_GENERATOR_KEY);
+//        Long xiaojiashuId = redisTemplate.opsForValue().increment(RedisKeyConstants.XIAOJIASHU_ID_GENERATOR_KEY);
+
+        // RPC: 调用分布式 ID 生成服务生成小哈书 ID
+        String xiaojiashuId = distributedIdGeneratorRpcService.getXiaojiashuId();
 
         UserDO userDO = UserDO.builder()
                 .phone(phone)

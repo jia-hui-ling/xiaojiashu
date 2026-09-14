@@ -111,6 +111,10 @@
             <artifactId>xiaojiashu-user-api</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.jiahuiling</groupId>
+            <artifactId>xiaojiashu-distributed-id-generator-api</artifactId>
+        </dependency>
 
 
 
