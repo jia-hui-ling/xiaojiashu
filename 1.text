@@ -1,0 +1,1 @@
+docker exec -it xiaojiashu-cassandra-1 cqlsh
