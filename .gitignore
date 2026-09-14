@@ -18,6 +18,7 @@ data/minio/.minio.sys/buckets/.bloomcycle.bin/
 data/minio/.minio.sys/buckets/.usage-cache.bin/
 data/minio/.minio.sys/buckets/.usage.json/
 data/minio/.minio.sys/buckets/*/.usage-cache.bin/
+data/minio/.minio.sys/tmp/
 
 # Cassandra runtime data and SSTables
 data/cassandra/*
