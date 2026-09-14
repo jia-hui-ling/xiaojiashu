@@ -25,6 +25,7 @@
         <module>xiaojiashu-user</module>
         <module>xiaojiashu-kv</module>
         <module>xiaojiashu-distributed-id-generator</module>
+        <module>xiaojiashu-note</module>
     </modules>
 
     <properties>
