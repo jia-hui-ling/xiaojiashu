@@ -4,9 +4,11 @@ import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.xiaojiashu.user.biz.model.vo.UpdateUserInfoReqVO;
 import com.jiahuiling.xiaojiashu.user.biz.service.UserService;
+import com.jiahuiling.xiaojiashu.user.dto.req.FindUserByIdReqDTO;
 import com.jiahuiling.xiaojiashu.user.dto.req.FindUserByPhoneReqDTO;
 import com.jiahuiling.xiaojiashu.user.dto.req.RegisterUserReqDTO;
 import com.jiahuiling.xiaojiashu.user.dto.req.UpdateUserPasswordReqDTO;
+import com.jiahuiling.xiaojiashu.user.dto.resp.FindUserByIdRspDTO;
 import com.jiahuiling.xiaojiashu.user.dto.resp.FindUserByPhoneRspDTO;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
@@ -64,5 +66,10 @@ public class UserController {
         return userService.updatePassword(updateUserPasswordReqDTO);
     }
 
+    @PostMapping("/findById")
+    @ApiOperationLog(description = "查询用户信息")
+    public Response<FindUserByIdRspDTO> findById(@Validated @RequestBody FindUserByIdReqDTO findUserByIdReqDTO) {
+        return userService.findById(findUserByIdReqDTO);
+    }
 
 }
