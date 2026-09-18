@@ -62,6 +62,30 @@
       <groupId>com.jiahuiling</groupId>
       <artifactId>xiaojia-spring-boot-starter-jackson</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.jiahuiling</groupId>
+      <artifactId>xiaojiashu-oss-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.jiahuiling</groupId>
+      <artifactId>xiaojiashu-user-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.jiahuiling</groupId>
+      <artifactId>xiaojiashu-distributed-id-generator-api</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
