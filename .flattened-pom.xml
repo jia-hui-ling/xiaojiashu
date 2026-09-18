@@ -14,9 +14,13 @@
     <module>xiaojiashu-gateway</module>
     <module>xiaojiashu-oss</module>
     <module>xiaojiashu-user</module>
+    <module>xiaojiashu-kv</module>
+    <module>xiaojiashu-distributed-id-generator</module>
+    <module>xiaojiashu-note</module>
   </modules>
   <properties>
     <minio.version>8.2.1</minio.version>
+    <feign-form.version>3.8.0</feign-form.version>
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -156,6 +160,31 @@
         <groupId>com.alibaba</groupId>
         <artifactId>transmittable-thread-local</artifactId>
         <version>${transmittable-thread-local.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.jiahuiling</groupId>
+        <artifactId>xiaojiashu-oss-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.openfeign.form</groupId>
+        <artifactId>feign-form</artifactId>
+        <version>${feign-form.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.jiahuiling</groupId>
+        <artifactId>xiaojiashu-user-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.jiahuiling</groupId>
+        <artifactId>xiaojiashu-kv-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.jiahuiling</groupId>
+        <artifactId>xiaojiashu-distributed-id-generator-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

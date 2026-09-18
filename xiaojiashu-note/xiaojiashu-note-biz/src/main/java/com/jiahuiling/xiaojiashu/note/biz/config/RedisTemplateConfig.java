@@ -1,4 +1,4 @@
-package com.jiahuiling.xiaojiashu.user.biz.config;
+package com.jiahuiling.xiaojiashu.note.biz.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
