@@ -90,4 +90,12 @@
       is_deleted = #{isDeleted,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectNameByPrimaryKey" parameterType="java.lang.Long" resultType="string">
+    select
+      name
+    from t_topic
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
 </mapper>
