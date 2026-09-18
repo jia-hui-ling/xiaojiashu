@@ -9,7 +9,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @Author 贾慧玲
- * @Date 2026/9/4 11:54
  * @Description RedisTemplate 配置
  */
 @Configuration
@@ -17,7 +16,9 @@ public class RedisTemplateConfig {
     @Bean
     public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory connectionFactory){
         RedisTemplate<String,Object> redisTemplate = new RedisTemplate<>();
+        // 设置 RedisTemplate 的连接工厂
         redisTemplate.setConnectionFactory(connectionFactory);
+
         // 使用 StringRedisSerializer 来序列化和反序列化 redis 的 key 值，确保 key 是可读的字符串
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
