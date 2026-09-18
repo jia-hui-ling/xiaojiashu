@@ -1,0 +1,13 @@
+package com.jiahuiling.xiaojiashu.note.biz.service;
+
+import com.jiahuiling.framework.common.response.Response;
+import com.jiahuiling.xiaojiashu.note.biz.model.vo.PublishNoteReqVO;
+
+public interface NoteService {
+    /**
+            * 笔记发布
+     * @param publishNoteReqVO
+     * @return
+             */
+    Response<?> publishNote(PublishNoteReqVO publishNoteReqVO);
+}

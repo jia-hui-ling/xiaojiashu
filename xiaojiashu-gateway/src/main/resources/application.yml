@@ -22,6 +22,12 @@ spring:
             - Path=/user/**
           filters:
             - StripPrefix=1
+        - id: note
+          uri: lb://xiaojiashu-note
+          predicates:
+            - Path=/note/**
+          filters:
+            - StripPrefix=1
 
 
 
