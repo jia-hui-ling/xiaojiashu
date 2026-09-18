@@ -11,6 +11,8 @@ public enum ResponseCodeEnum implements BaseExceptionInterface {
 
     SYSTEM_ERROR("NOTE-10000","出错了，小贾同学正在努力修复bug中"),
     PARAM_NOT_VALID("NOTE-10001","参数错误"),
+    NOTE_TYPE_ERROR("NOTE-20000", "未知的笔记类型"),
+    NOTE_PUBLISH_FAIL("NOTE-20001", "笔记发布失败"),
     ;
 
 //    异常码，异常信息
