@@ -4,6 +4,8 @@ import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.xiaojiashu.kv.api.KeyValueFeignApi;
 import com.jiahuiling.xiaojiashu.kv.dto.req.AddNoteContentReqDTO;
 import com.jiahuiling.xiaojiashu.kv.dto.req.DeleteNoteContentReqDTO;
+import com.jiahuiling.xiaojiashu.kv.dto.req.FindNoteContentReqDTO;
+import com.jiahuiling.xiaojiashu.kv.dto.rsp.FindNoteContentRspDTO;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
@@ -49,5 +51,25 @@ public class KeyValueRpcService {
             return false;
         }
         return true;
+    }
+
+    /**
+     * 查询笔记内容
+     *
+     * @param uuid
+     * @return
+     */
+    public String findNoteContent(String uuid) {
+        FindNoteContentReqDTO findNoteContentReqDTO = new FindNoteContentReqDTO();
+        findNoteContentReqDTO.setUuid(uuid);
+
+        Response<FindNoteContentRspDTO> response = keyValueFeignApi.findNoteContent(findNoteContentReqDTO);
+
+        if (Objects.isNull(response) || !response.isSuccess()) {
+            return null;
+        }
+
+        return response.getData().getContent();
+
     }
 }

@@ -23,10 +23,10 @@
     video_uri, visible, create_time, update_time, `status`, content_uuid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    select
+    <include refid="Base_Column_List"/>
     from t_note
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT} and status = 1
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_note
