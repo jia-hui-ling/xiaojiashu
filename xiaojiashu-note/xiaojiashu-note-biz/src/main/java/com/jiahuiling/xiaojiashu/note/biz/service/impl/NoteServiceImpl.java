@@ -1,10 +1,13 @@
 package com.jiahuiling.xiaojiashu.note.biz.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.RandomUtil;
 import com.alibaba.nacos.shaded.com.google.common.base.Preconditions;
 import com.jiahuiling.framework.biz.context.holder.LoginUserContextHolder;
 import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
+import com.jiahuiling.framework.jackson.util.JsonUtils;
+import com.jiahuiling.xiaojiashu.note.biz.constant.RedisKeyConstant;
 import com.jiahuiling.xiaojiashu.note.biz.domain.dataobject.NoteDO;
 import com.jiahuiling.xiaojiashu.note.biz.domain.mapper.NoteDOMapper;
 import com.jiahuiling.xiaojiashu.note.biz.domain.mapper.TopicDOMapper;
@@ -23,12 +26,15 @@ import com.jiahuiling.xiaojiashu.user.dto.resp.FindUserByIdRspDTO;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
@@ -48,6 +54,12 @@ public class NoteServiceImpl implements NoteService {
 
     @Resource
     private UserRpcService userRpcService;
+
+    @Resource(name = "taskExecutor")
+    private ThreadPoolTaskExecutor threadPoolTaskExecutor;
+
+    @Resource
+    private RedisTemplate<String, String> redisTemplate;
 
     /**
      * 笔记发布
@@ -170,17 +182,39 @@ public class NoteServiceImpl implements NoteService {
         // 当前登录用户
         Long userId = LoginUserContextHolder.getUserId();
 
+        // 从 Redis 缓存中获取
+        String noteDetailRediaKy = RedisKeyConstant.buildNoteDetailKey(noteId);
+        String noteDetailJson = redisTemplate.opsForValue().get(noteDetailRediaKy);
+
+        // 若缓存中有该笔记的数据，则直接返回
+        if (StringUtils.isNotBlank(noteDetailJson)) {
+            FindNoteDetailRspVO findNoteDetailRspVO = JsonUtils.parseObject(noteDetailJson, FindNoteDetailRspVO.class);
+            //可见性校验
+            if (Objects.nonNull(findNoteDetailRspVO)) {
+                Integer visible = findNoteDetailRspVO.getVisible();
+                checkNoteVisible(visible, userId, findNoteDetailRspVO.getCreatorId());
+            }
+            return Response.success(findNoteDetailRspVO);
+        }
+
+        // 若 Redis 缓存中获取不到，则走数据库查询
         // 查询笔记
         NoteDO noteDO = noteDOMapper.selectByPrimaryKey(noteId);
 
         // 若该笔记不存在，则抛出业务异常
         if (Objects.isNull(noteDO)) {
+            threadPoolTaskExecutor.execute(() -> {
+                // 防止缓存穿透，将空数据存入 Redis 缓存 (过期时间不宜设置过长)
+                // 保底1分钟 + 随机秒数
+                long expireSeconds = 60 + RandomUtil.randomInt(60);
+                redisTemplate.opsForValue().set(noteDetailRediaKy, "null", expireSeconds, TimeUnit.SECONDS);
+            });
             throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
         }
 
         // 可见性校验
         Integer visible = noteDO.getVisible();
-        checkNoteVisible(visible,userId, noteDO.getCreatorId());
+        checkNoteVisible(visible, userId, noteDO.getCreatorId());
 
         // RPC: 调用用户服务
         Long creatorId = noteDO.getCreatorId();
@@ -219,18 +253,26 @@ public class NoteServiceImpl implements NoteService {
                 .visible(noteDO.getVisible())
                 .build();
 
+        // 异步线程中将笔记详情存入 Redis
+        threadPoolTaskExecutor.execute(() -> {
+            String noteDetailJson1 = JsonUtils.toJsonString(findNoteDetailRspVO);
+            // 过期时间（保底1天 + 随机秒数，将缓存过期时间打散，防止同一时间大量缓存失效，导致数据库压力太大）
+            long expireSeconds = 60 * 60 * 24 + RandomUtil.randomInt(60 * 60 * 24);
+            redisTemplate.opsForValue().set(noteDetailRediaKy, noteDetailJson1, expireSeconds, TimeUnit.SECONDS);
+        });
         return Response.success(findNoteDetailRspVO);
     }
 
     /**
      * 校验笔记的可见性
-     * @param visible 是否可见
+     *
+     * @param visible    是否可见
      * @param currUserId 当前用户 ID
-     * @param creatorId 笔记创建者
+     * @param creatorId  笔记创建者
      */
-    public void checkNoteVisible(Integer visible ,Long currUserId,Long creatorId){
+    public void checkNoteVisible(Integer visible, Long currUserId, Long creatorId) {
         if (Objects.equals(visible, NoteVisibleEnum.PRIVATE.getCode())
-                && !Objects.equals(currUserId,creatorId)) {
+                && !Objects.equals(currUserId, creatorId)) {
             throw new BizException(ResponseCodeEnum.NOTE_PRIVATE);
         }
     }
