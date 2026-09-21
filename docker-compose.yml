@@ -65,6 +65,46 @@ services:
       - ./logs/nacos:/home/nacos/logs
     restart: unless-stopped
 
+  namesrv:
+    image: apache/rocketmq:5.3.1
+    command: ["sh", "mqnamesrv"]
+    ports:
+      - "9876:9876"
+    volumes:
+      - ./logs/rocketmq/namesrv:/home/rocketmq/logs
+    restart: unless-stopped
+
+  rocketmq-broker:
+    image: apache/rocketmq:5.3.1
+    depends_on:
+      - namesrv
+    command: ["sh", "mqbroker", "--enable-proxy", "-c", "/home/rocketmq/rocketmq-5.3.1/conf/broker.conf"]
+    ports:
+      - "10909:10909"
+      - "10911:10911"
+      - "10912:10912"
+    privileged: true
+    environment:
+      NAMESRV_ADDR: namesrv:9876
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./rocketmq/broker/logs:/home/rocketmq/logs/rocketmqlogs
+      - ./rocketmq/broker/store:/home/rocketmq/store
+      - ./rocketmq/broker/config/broker.conf:/home/rocketmq/rocketmq-5.3.1/conf/broker.conf:ro
+      - ./rocketmq/broker/bin/runbroker.sh:/home/rocketmq/rocketmq-5.3.1/bin/runbroker.sh:ro
+    restart: unless-stopped
+
+  rocketmq-dashboard:
+    image: apacherocketmq/rocketmq-dashboard:2.0.0
+    depends_on:
+      - namesrv
+    ports:
+      - "8070:8080"
+    environment:
+      JAVA_OPTS: "-Xmx200M -Xms200M -Xmn100M -Drocketmq.namesrv.addr=namesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false"
+    restart: unless-stopped
+
   cassandra:
     image: cassandra:5.0.9
     ports:

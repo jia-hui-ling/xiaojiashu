@@ -83,7 +83,7 @@ public class NoteServiceImpl implements NoteService {
      * @return
      */
     @Override
-    public Response<?> publishNote(PublishNoteReqVO publishNoteReqVO) {
+    public Response<String> publishNote(PublishNoteReqVO publishNoteReqVO) {
         // 笔记类型
         Integer type = publishNoteReqVO.getType();
 
@@ -185,7 +185,7 @@ public class NoteServiceImpl implements NoteService {
             }
         }
 
-        return Response.success();
+        return Response.success(snowflakeIdId);
     }
 
 

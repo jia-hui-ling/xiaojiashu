@@ -301,21 +301,26 @@ public class UserServiceImpl implements UserService {
         // 用户缓存 Redis Key
         String userInfoRedisKey = RedisKeyConstants.buildUserInfoKey(userId);
         // 从 Redis 缓存中查询
-        String userInfoRedisValue = (String) redisTemplate.opsForValue().get(userInfoRedisKey);
+        Object userInfoRedisValue = redisTemplate.opsForValue().get(userInfoRedisKey);
         // 若 Redis 缓存中存在该用户信息
-        if (StringUtils.isNotBlank(userInfoRedisValue)) {
-            // 将存储的 Json 字符串转换成对象，并返回
-            FindUserByIdRspDTO findUserByIdRspDTO = JsonUtils.parseObject(userInfoRedisValue, FindUserByIdRspDTO.class);
+        if (Objects.nonNull(userInfoRedisValue)
+                && !Objects.equals("null", userInfoRedisValue.toString())) {
+            // Jackson JSON 反序列化为 Object 时可能得到 LinkedHashMap，统一转成 DTO。
+            String userInfoJson = userInfoRedisValue instanceof String
+                    ? (String) userInfoRedisValue
+                    : JsonUtils.toJsonString(userInfoRedisValue);
+            FindUserByIdRspDTO findUserByIdRspDTO = JsonUtils.parseObject(userInfoJson, FindUserByIdRspDTO.class);
 
-            // 异步线程中将用户信息存入本地缓存
-            threadPoolTaskExecutor.execute(()->{
-                if (Objects.nonNull(findUserByIdRspDTO)) {
+            // 负缓存值为 "null"，解析结果为空时继续查询数据库，避免返回成功但无数据的响应。
+            if (Objects.nonNull(findUserByIdRspDTO)) {
+                // 异步线程中将用户信息存入本地缓存
+                threadPoolTaskExecutor.execute(() -> {
                     // 写入本地缓存
-                    LOCAL_CACHE.put(userId,findUserByIdRspDTO);
-                }
-            });
+                    LOCAL_CACHE.put(userId, findUserByIdRspDTO);
+                });
 
-            return Response.success(findUserByIdRspDTO);
+                return Response.success(findUserByIdRspDTO);
+            }
         }
         // 否则, 从数据库中查询
         // 根据用户 ID 查询用户信息
