@@ -25,7 +25,7 @@ public class NoteController {
 
     @PostMapping("/publish")
     @ApiOperationLog(description = "笔记发布")
-    public Response<?> publishNote(@Validated @RequestBody PublishNoteReqVO publishNoteReqVO){
+    public Response<String> publishNote(@Validated @RequestBody PublishNoteReqVO publishNoteReqVO){
         return noteService.publishNote(publishNoteReqVO);
     }
     @PostMapping("/detail")

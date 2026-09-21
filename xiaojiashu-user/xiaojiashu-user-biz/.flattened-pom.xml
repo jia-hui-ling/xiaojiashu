@@ -86,6 +86,10 @@
       <groupId>com.jiahuiling</groupId>
       <artifactId>xiaojiashu-distributed-id-generator-api</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

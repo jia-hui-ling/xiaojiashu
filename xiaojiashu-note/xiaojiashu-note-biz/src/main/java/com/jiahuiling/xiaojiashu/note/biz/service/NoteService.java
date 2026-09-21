@@ -12,7 +12,7 @@ public interface NoteService {
      * @param publishNoteReqVO
      * @return
      */
-    Response<?> publishNote(PublishNoteReqVO publishNoteReqVO);
+    Response<String> publishNote(PublishNoteReqVO publishNoteReqVO);
 
     /**
      * 笔记详情
