@@ -60,6 +60,9 @@ services:
       TZ: Asia/Shanghai
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data/nacos:/home/nacos/data
+      - ./logs/nacos:/home/nacos/logs
     restart: unless-stopped
 
   cassandra:
