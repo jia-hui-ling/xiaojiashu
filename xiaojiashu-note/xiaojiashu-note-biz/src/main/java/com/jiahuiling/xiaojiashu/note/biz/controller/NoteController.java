@@ -2,12 +2,12 @@ package com.jiahuiling.xiaojiashu.note.biz.controller;
 
 import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
+import com.jiahuiling.xiaojiashu.note.biz.model.vo.FindNoteDetailReqVO;
+import com.jiahuiling.xiaojiashu.note.biz.model.vo.FindNoteDetailRspVO;
 import com.jiahuiling.xiaojiashu.note.biz.model.vo.PublishNoteReqVO;
 import com.jiahuiling.xiaojiashu.note.biz.service.NoteService;
 import jakarta.annotation.Resource;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,8 +23,13 @@ public class NoteController {
     private NoteService noteService;
 
     @PostMapping("/publish")
-    @ApiOperationLog
+    @ApiOperationLog(description = "笔记发布")
     public Response<?> publishNote(@Validated @RequestBody PublishNoteReqVO publishNoteReqVO){
         return noteService.publishNote(publishNoteReqVO);
+    }
+    @PostMapping("/detail")
+    @ApiOperationLog(description = "笔记详情")
+    public Response<FindNoteDetailRspVO> findNoteDetail(@Validated @RequestBody FindNoteDetailReqVO findNoteDetailReqVO){
+        return noteService.findNoteDetail(findNoteDetailReqVO);
     }
 }

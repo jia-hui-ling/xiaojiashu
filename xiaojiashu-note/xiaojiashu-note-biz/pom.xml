@@ -110,6 +110,11 @@
             <artifactId>hutool-all</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.jiahuiling</groupId>
+            <artifactId>xiaojiashu-user-api</artifactId>
+        </dependency>
+
 
     </dependencies>
 
