@@ -65,3 +65,7 @@ build/
 .DS_Store
 *.log
 .idea/
+
+# RocketMQ数据
+rocketmq/
+data/
