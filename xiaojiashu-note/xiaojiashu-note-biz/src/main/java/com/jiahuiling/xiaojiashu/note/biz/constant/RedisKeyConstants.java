@@ -1,6 +1,6 @@
 package com.jiahuiling.xiaojiashu.note.biz.constant;
 
-public class RedisKeyConstant {
+public class RedisKeyConstants {
     /**
      * 笔记详情 KEY 前缀
      */

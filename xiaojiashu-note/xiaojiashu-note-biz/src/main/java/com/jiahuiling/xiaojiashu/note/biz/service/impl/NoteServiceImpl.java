@@ -9,9 +9,8 @@ import com.jiahuiling.framework.biz.context.holder.LoginUserContextHolder;
 import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.framework.jackson.util.JsonUtils;
-import com.jiahuiling.xiaojiashu.note.biz.config.RocketMQConfig;
 import com.jiahuiling.xiaojiashu.note.biz.constant.MQConstants;
-import com.jiahuiling.xiaojiashu.note.biz.constant.RedisKeyConstant;
+import com.jiahuiling.xiaojiashu.note.biz.constant.RedisKeyConstants;
 import com.jiahuiling.xiaojiashu.note.biz.domain.dataobject.NoteDO;
 import com.jiahuiling.xiaojiashu.note.biz.domain.mapper.NoteDOMapper;
 import com.jiahuiling.xiaojiashu.note.biz.domain.mapper.TopicDOMapper;
@@ -32,8 +31,12 @@ import jakarta.annotation.Resource;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.rocketmq.client.producer.SendCallback;
+import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -220,7 +223,7 @@ public class NoteServiceImpl implements NoteService {
             return Response.success(findNoteDetailRspVO);
         }
         // 从 Redis 缓存中获取
-        String noteDetailRediaKey = RedisKeyConstant.buildNoteDetailKey(noteId);
+        String noteDetailRediaKey = RedisKeyConstants.buildNoteDetailKey(noteId);
         String noteDetailJson = redisTemplate.opsForValue().get(noteDetailRediaKey);
 
         // 若缓存中有该笔记的数据，则直接返回
@@ -400,6 +403,10 @@ public class NoteServiceImpl implements NoteService {
             }
         }
 
+        // 删除 Redis 缓存
+        String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
+        redisTemplate.delete(noteDetailRedisKey);
+
         // 更新笔记元数据表 t_note
         String content = updateNoteReqVO.getContent();
         NoteDO noteDO = NoteDO.builder()
@@ -416,9 +423,24 @@ public class NoteServiceImpl implements NoteService {
 
         noteDOMapper.updateByPrimaryKey(noteDO);
 
-        // 删除 Redis 缓存
-        String noteDetailRedisKey = RedisKeyConstant.buildNoteDetailKey(noteId);
-        redisTemplate.delete(noteDetailRedisKey);
+        // 一致性保证：延迟双删策略
+        // 异步发送延时消息
+        Message<String> message = MessageBuilder.withPayload(String.valueOf(noteId)).build();
+        rocketMQTemplate.asyncSend(MQConstants.TOPIC_DELAY_DELETE_NOTE_REDIS_CACHE, message,
+                new SendCallback() {
+                    @Override
+                    public void onSuccess(SendResult sendResult) {
+                        log.info("## 延时删除 Redis 笔记缓存消息发送成功...");
+                    }
+
+                    @Override
+                    public void onException(Throwable e) {
+                        log.error("## 延时删除 Redis 笔记缓存消息发送失败...", e);
+                    }
+                },
+                3000, // 超时时间(毫秒)
+                1 // 延迟级别，1 表示延时 1s
+        );
 
 //        // 删除本地缓存
 //        LOCAL_CACHE.invalidate(noteId);
@@ -438,6 +460,7 @@ public class NoteServiceImpl implements NoteService {
             isUpdateContentSuccess = keyValueRpcService.deleteNoteContent(contentUuid);
         } else {
             // 若将无内容的笔记，更新为了有内容的笔记，需要重新生成 UUID
+            //todo noteDO 没有把新的 contentUuid update 入库
             contentUuid = StringUtils.isBlank(contentUuid) ? UUID.randomUUID().toString() : contentUuid;
             // 调用 K-V 更新短文本
             isUpdateContentSuccess = keyValueRpcService.saveNoteContent(contentUuid, content);
