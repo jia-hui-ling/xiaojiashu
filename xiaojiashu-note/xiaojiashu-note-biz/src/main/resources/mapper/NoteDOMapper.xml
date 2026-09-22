@@ -202,4 +202,11 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
+  <update id="updateVisibleOnlyMe" parameterType="com.jiahuiling.xiaojiashu.note.biz.domain.dataobject.NoteDO">
+      update t_note
+      set visible     = #{visible,jdbcType=TINYINT},
+          update_time = #{updateTime,jdbcType=TIMESTAMP}
+      where id = #{id,jdbcType=BIGINT}
+        and `status` = 1
+  </update>
 </mapper>
