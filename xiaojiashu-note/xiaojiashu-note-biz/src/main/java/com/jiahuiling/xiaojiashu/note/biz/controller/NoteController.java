@@ -25,19 +25,29 @@ public class NoteController {
     public Response<String> publishNote(@Validated @RequestBody PublishNoteReqVO publishNoteReqVO){
         return noteService.publishNote(publishNoteReqVO);
     }
+
     @PostMapping("/detail")
     @ApiOperationLog(description = "笔记详情")
     public Response<FindNoteDetailRspVO> findNoteDetail(@Validated @RequestBody FindNoteDetailReqVO findNoteDetailReqVO){
         return noteService.findNoteDetail(findNoteDetailReqVO);
     }
+
     @PostMapping("/update")
     @ApiOperationLog(description = "笔记更新")
     public Response<?> updateNote(@Validated @RequestBody UpdateNoteReqVO updateNoteReqVO){
         return noteService.updateNote(updateNoteReqVO);
     }
+
     @PostMapping("/delete")
     @ApiOperationLog(description = "笔记删除")
     public Response<?> deleteNote(@Validated @RequestBody DeleteNoteReqVO deleteNoteReqVO){
         return noteService.deleteNote(deleteNoteReqVO);
     }
+
+    @PostMapping("/visible/onlyme")
+    @ApiOperationLog(description = "笔记仅对自己可见")
+    public Response<?> visibleOnlyMe(@Validated @RequestBody UpdateNoteVisibleOnlyMeReqVO updateNoteVisibleOnlyMeReqVO){
+        return noteService.visibleOnlyMe(updateNoteVisibleOnlyMeReqVO);
+    }
+
 }
