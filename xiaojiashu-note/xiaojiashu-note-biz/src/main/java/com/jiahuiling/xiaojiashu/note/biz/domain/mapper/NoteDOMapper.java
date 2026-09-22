@@ -16,4 +16,6 @@ public interface NoteDOMapper {
     int updateByPrimaryKey(NoteDO record);
 
     int updateVisibleOnlyMe(NoteDO noteDO);
+
+    int updateIsTop(NoteDO noteDO);
 }
