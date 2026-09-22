@@ -9,6 +9,8 @@ import com.jiahuiling.framework.biz.context.holder.LoginUserContextHolder;
 import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.framework.jackson.util.JsonUtils;
+import com.jiahuiling.xiaojiashu.note.biz.config.RocketMQConfig;
+import com.jiahuiling.xiaojiashu.note.biz.constant.MQConstants;
 import com.jiahuiling.xiaojiashu.note.biz.constant.RedisKeyConstant;
 import com.jiahuiling.xiaojiashu.note.biz.domain.dataobject.NoteDO;
 import com.jiahuiling.xiaojiashu.note.biz.domain.mapper.NoteDOMapper;
@@ -30,6 +32,7 @@ import jakarta.annotation.Resource;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
@@ -67,6 +70,8 @@ public class NoteServiceImpl implements NoteService {
     @Resource
     private RedisTemplate<String, String> redisTemplate;
 
+    @Resource
+    private RocketMQTemplate rocketMQTemplate;
     /**
      * 笔记详情本地缓存
      */
@@ -265,7 +270,7 @@ public class NoteServiceImpl implements NoteService {
 
         CompletableFuture<String> finalContentResultFuture = contentResultFuture;
         CompletableFuture<FindNoteDetailRspVO> resultFuture = CompletableFuture
-                .allOf(userResultFuture,contentResultFuture)
+                .allOf(userResultFuture, contentResultFuture)
                 .thenApply(s -> {
                     // 获取 Future 返回的结果
                     FindUserByIdRspDTO findUserByIdRspDTO = userResultFuture.join();
@@ -415,9 +420,12 @@ public class NoteServiceImpl implements NoteService {
         String noteDetailRedisKey = RedisKeyConstant.buildNoteDetailKey(noteId);
         redisTemplate.delete(noteDetailRedisKey);
 
-        // 删除本地缓存
-        LOCAL_CACHE.invalidate(noteId);
+//        // 删除本地缓存
+//        LOCAL_CACHE.invalidate(noteId);
 
+        // 同步发送广播模式 MQ，将所有实例中的本地缓存都删除掉
+        rocketMQTemplate.syncSend(MQConstants.TOPIC_DELETE_NOTE_LOCAL_CACHE, noteId);
+        log.info("====> MQ：删除笔记本地缓存发送成功...");
         // 笔记内容更新
         // 查询此篇笔记内容对应的 UUID
         NoteDO noteDO1 = noteDOMapper.selectByPrimaryKey(noteId);
@@ -441,6 +449,11 @@ public class NoteServiceImpl implements NoteService {
         }
 
         return Response.success();
+    }
+
+    @Override
+    public void deleteNoteLocalCache(Long noteId) {
+        LOCAL_CACHE.invalidate(noteId);
     }
 
 }
