@@ -28,6 +28,12 @@ spring:
             - Path=/note/**
           filters:
             - StripPrefix=1
+        - id: user-relation
+          uri: lb://xiaojiashu-user-relation
+          predicates:
+            - Path=/relation/**
+          filters:
+            - StripPrefix=1
 
 
 
