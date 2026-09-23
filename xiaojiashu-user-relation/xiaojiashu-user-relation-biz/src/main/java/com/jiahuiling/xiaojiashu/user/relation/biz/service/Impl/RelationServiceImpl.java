@@ -6,21 +6,30 @@ import com.jiahuiling.framework.biz.context.holder.LoginUserContextHolder;
 import com.jiahuiling.framework.common.exception.BizException;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.framework.common.util.DateUtils;
+import com.jiahuiling.framework.jackson.util.JsonUtils;
 import com.jiahuiling.xiaojiashu.user.dto.resp.FindUserByIdRspDTO;
+import com.jiahuiling.xiaojiashu.user.relation.biz.config.RocketMQConfig;
+import com.jiahuiling.xiaojiashu.user.relation.biz.constant.MQConstants;
 import com.jiahuiling.xiaojiashu.user.relation.biz.constant.RedisKeyConstants;
 import com.jiahuiling.xiaojiashu.user.relation.biz.domain.dataobject.FollowingDO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.domain.mapper.FollowingDOMapper;
 import com.jiahuiling.xiaojiashu.user.relation.biz.enums.LuaResultEnum;
 import com.jiahuiling.xiaojiashu.user.relation.biz.enums.ResponseCodeEnum;
+import com.jiahuiling.xiaojiashu.user.relation.biz.model.dto.FollowUserMqDTO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FollowUserReqVO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.rpc.UserRpcService;
 import com.jiahuiling.xiaojiashu.user.relation.biz.service.RelationService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.client.producer.SendCallback;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.scripting.support.ResourceScriptSource;
 import org.springframework.stereotype.Service;
 
@@ -33,10 +42,12 @@ public class RelationServiceImpl implements RelationService {
 
     @Resource
     private UserRpcService userRpcService;
-    @Autowired
+    @Resource
     private RedisTemplate<String, Object> redisTemplate;
-    @Autowired
+    @Resource
     private FollowingDOMapper followingDOMapper;
+    @Resource
+    private RocketMQTemplate rocketMQTemplate;
 
     /**
      * 关注用户
@@ -146,11 +157,42 @@ public class RelationServiceImpl implements RelationService {
 
         }
 
-        // TODO: 发送 MQ
+        // 发送 MQ
+        // 构建消息体 DTO
+        FollowUserMqDTO followUserMqDTO = FollowUserMqDTO.builder()
+                .userId(userId)
+                .followUserId(followUserId)
+                .createTime(now)
+                .build();
+
+        // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
+        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(followUserMqDTO)).build();
+
+        // 通过冒号连接, 可让 MQ 发送给主题 Topic 时，携带上标签 Tag
+        String destination = MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW + ":" + MQConstants.TAG_FOLLOW;
+
+        log.info("==> 开始发送关注操作 MQ, 消息体: {}", followUserMqDTO);
+
+        // 异步发送 MQ 消息，提升接口响应速度
+        rocketMQTemplate.asyncSend(destination, message, new SendCallback() {
+            @Override
+            public void onSuccess(SendResult sendResult) {
+                log.info("==> MQ 发送成功，SendResult: {}", sendResult);
+            }
+
+            @Override
+            public void onException(Throwable e) {
+                log.error("==> MQ 发送异常: ", e);
+
+            }
+        });
+
         return Response.success();
     }
+
     /**
      * 校验 Lua 脚本结果，根据状态码抛出对应的业务异常
+     *
      * @param result
      */
     private static void checkLuaScriptResult(Long result) {
