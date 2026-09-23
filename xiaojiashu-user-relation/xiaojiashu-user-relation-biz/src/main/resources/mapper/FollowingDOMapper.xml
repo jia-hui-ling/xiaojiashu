@@ -81,9 +81,10 @@
   </update>
 
   <select id="selectByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select user_id,
-           following_user_id,
-           create_time
-             form t_following where user_id=#{userId,jdbcType=BIGINT}
+      select user_id,
+             following_user_id,
+             create_time
+      from t_following
+      where user_id = #{userId,jdbcType=BIGINT}
   </select>
 </mapper>

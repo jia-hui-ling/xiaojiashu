@@ -75,10 +75,10 @@ services:
     restart: unless-stopped
 
   rocketmq-broker:
-    image: apache/rocketmq:5.3.1
+    image: apache/rocketmq:5.3.3
     depends_on:
       - namesrv
-    command: ["sh", "mqbroker", "--enable-proxy", "-c", "/home/rocketmq/rocketmq-5.3.1/conf/broker.conf"]
+    command: ["sh", "mqbroker", "--enable-proxy", "-c", "/home/rocketmq/rocketmq-5.3.3/conf/broker.conf"]
     ports:
       - "10909:10909"
       - "10911:10911"
@@ -91,8 +91,8 @@ services:
     volumes:
       - ./rocketmq/broker/logs:/home/rocketmq/logs/rocketmqlogs
       - ./rocketmq/broker/store:/home/rocketmq/store
-      - ./rocketmq/broker/config/broker.conf:/home/rocketmq/rocketmq-5.3.1/conf/broker.conf:ro
-      - ./rocketmq/broker/bin/runbroker.sh:/home/rocketmq/rocketmq-5.3.1/bin/runbroker.sh:ro
+      - ./rocketmq/broker/config/broker.conf:/home/rocketmq/rocketmq-5.3.3/conf/broker.conf:ro
+    # runbroker.sh这个挂载直接删掉！版本不一样不要挂载旧脚本
     restart: unless-stopped
 
   rocketmq-dashboard:
