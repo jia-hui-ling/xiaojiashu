@@ -3,6 +3,7 @@ package com.jiahuiling.xiaojiashu.user.relation.biz.controller;
 import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
 import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FollowUserReqVO;
+import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.UnfollowUserReqVO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.service.RelationService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
@@ -23,4 +24,11 @@ public class UserRelationController {
     public Response<?> follow(@Validated @RequestBody FollowUserReqVO followUserReqVO) {
         return relationService.follow(followUserReqVO);
     }
+
+    @PostMapping("/unfollow")
+    @ApiOperationLog(description = "取关用户")
+    public Response<?> unfollow(@Validated @RequestBody UnfollowUserReqVO unfollowUserReqVO) {
+        return relationService.unfollow(unfollowUserReqVO);
+    }
+
 }
