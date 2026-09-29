@@ -79,4 +79,10 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <delete id="deleteByUserIdAndFansUserId" parameterType="map">
+      delete
+      from t_fans
+      where user_id = #{userId}
+        and fans_user_id = #{fansUserId}
+  </delete>
 </mapper>
