@@ -387,6 +387,17 @@ public class NoteServiceImpl implements NoteService {
             default:
                 break;
         }
+        // 当前登录用户 ID
+        Long currUserId = LoginUserContextHolder.getUserId();
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+        // 笔记不存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+        // 判断权限：非笔记发布者不允许更新笔记
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
 
         // 话题
         Long topicId = updateNoteReqVO.getTopicId();
@@ -476,11 +487,30 @@ public class NoteServiceImpl implements NoteService {
         LOCAL_CACHE.invalidate(noteId);
     }
 
+    /**
+     * 删除笔记
+     *
+     * @param deleteNoteReqVO
+     * @return
+     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Response<?> deleteNote(DeleteNoteReqVO deleteNoteReqVO) {
         // 笔记 ID
         Long noteId = deleteNoteReqVO.getId();
+
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+
+        // 判断笔记是否存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 判断权限：非笔记发布者不允许删除笔记
+        Long currUserId = LoginUserContextHolder.getUserId();
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
 
         // 逻辑删除
         NoteDO noteDO = NoteDO.builder()
@@ -524,6 +554,19 @@ public class NoteServiceImpl implements NoteService {
                 .visible(NoteVisibleEnum.PRIVATE.getCode())
                 .updateTime(LocalDateTime.now())
                 .build();
+
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+
+        // 判断笔记是否存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 判断权限：非笔记发布者不允许修改笔记权限
+        Long currUserId = LoginUserContextHolder.getUserId();
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
 
         // 执行更新 SQL
         int count = noteDOMapper.updateVisibleOnlyMe(noteDO);
