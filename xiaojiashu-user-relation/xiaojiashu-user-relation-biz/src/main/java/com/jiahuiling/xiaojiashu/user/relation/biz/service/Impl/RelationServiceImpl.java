@@ -142,7 +142,7 @@ public class RelationServiceImpl implements RelationService {
                 script3.setScriptSource(
                         new ResourceScriptSource(
                                 new ClassPathResource(
-                                        "/lua/follow_batch_add_and_ecpire.lua"
+                                        "/lua/follow_batch_add_and_expire.lua"
                                 )
                         )
                 );
