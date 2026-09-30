@@ -2,6 +2,7 @@ package com.jiahuiling.xiaojiashu.user.relation.biz.controller;
 
 import com.jiahuiling.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jiahuiling.framework.common.response.Response;
+import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FindFansListReqVO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FindFollowingListReqVO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FollowUserReqVO;
 import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.UnfollowUserReqVO;
@@ -33,8 +34,14 @@ public class UserRelationController {
     }
 
     @PostMapping("/following/list")
-    @ApiOperationLog(description = "关注列表")
+    @ApiOperationLog(description = "查询关注列表")
     public Response<?> findFollowingList(@Validated @RequestBody FindFollowingListReqVO findFollowingListReqVO){
         return relationService.findFollowingList(findFollowingListReqVO);
+    }
+
+    @PostMapping("/fans/list")
+    @ApiOperationLog(description = "查询用户粉丝列表")
+    public Response<?> findFansList(@Validated @RequestBody FindFansListReqVO findFansListReqVO){
+        return relationService.findFansList(findFansListReqVO);
     }
 }

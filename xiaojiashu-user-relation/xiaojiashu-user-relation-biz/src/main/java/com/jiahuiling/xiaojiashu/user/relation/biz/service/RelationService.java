@@ -2,10 +2,7 @@ package com.jiahuiling.xiaojiashu.user.relation.biz.service;
 
 import com.jiahuiling.framework.common.response.PageResponse;
 import com.jiahuiling.framework.common.response.Response;
-import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FindFollowingListReqVO;
-import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FindFollowingUserRspVO;
-import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.FollowUserReqVO;
-import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.UnfollowUserReqVO;
+import com.jiahuiling.xiaojiashu.user.relation.biz.model.vo.*;
 
 /**
  * @description: 关注业务
@@ -33,4 +30,11 @@ public interface RelationService  {
      * @return
      */
     PageResponse<FindFollowingUserRspVO> findFollowingList(FindFollowingListReqVO findFollowingListReqVO);
+
+    /**
+     * 查询粉丝列表
+     * @param findFansListReqVO
+     * @return
+     */
+    PageResponse<FindFansUserRspVO> findFansList(FindFansListReqVO findFansListReqVO);
 }
