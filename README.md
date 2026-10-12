@@ -47,6 +47,15 @@ mysql -uroot -p123456 --default-character-set=utf8mb4 -e "source sql/nacos-confi
 - `mysql-backup.sql`：业务库 `leaf`（Leaf 号段表）、`xiaojiashu`（用户、角色权限、笔记、频道、话题等，含测试数据）
 - `nacos-config.sql`：Nacos 自己的库 `nacos_config`（含命名空间 `xiaojiashu` 和配置），并自动创建 Nacos 容器用的 `nacos/nacos` 账号，必须用 root 执行
 
+需要一套完整的演示笔记、用户、话题及互动数据时，再执行：
+
+```powershell
+mysql -uroot -p123456 --default-character-set=utf8mb4 -e "source sql/count-tables.sql; source sql/demo-data.sql"
+Get-Content sql/demo-content.cql | docker compose exec -T cassandra cqlsh
+```
+
+`demo-data.sql` 会创建 8 个用户、8 个话题、12 篇图文/视频笔记、16 条评论，并写入点赞、收藏及每篇笔记的统计数据；脚本只使用 1001 以上的演示 ID，可重复执行。`demo-content.cql` 写入与笔记 `content_uuid` 对应的 Cassandra 正文。
+
 ### 2. Docker 启动中间件
 
 MinIO 和 Cassandra 的数据分别保存在项目目录下的 `data/minio` 和 `data/cassandra`，换电脑时可以直接复制或提交整个 `data` 目录。复制前请先停止容器；两台电脑不要同时运行并写入同一份数据目录。
@@ -115,6 +124,8 @@ curl.exe -X POST http://127.0.0.1:8000/auth/login -H "Content-Type: application/
 | `sql/mysql-backup.sql` | `leaf` + `xiaojiashu` 两个业务库（结构 + 数据） |
 | `sql/nacos-config.sql` | `nacos_config` 库（Nacos 自身数据），含 OSS 服务必需的配置 |
 | `sql/cassandra-xiaojiashu.cql` | Cassandra keyspace 和 `note_content` 表 |
+| `sql/demo-data.sql` | 用户、话题、笔记、评论、点赞、收藏和笔记计数演示数据 |
+| `sql/demo-content.cql` | 演示笔记的 Cassandra 正文数据 |
 
 > 关于 OSS 配置：Nacos 里 Data Id `xiaojiashu-oss-dev.yaml`（group `DEFAULT_GROUP`，命名空间 `xiaojiashu`）的内容是：
 >
