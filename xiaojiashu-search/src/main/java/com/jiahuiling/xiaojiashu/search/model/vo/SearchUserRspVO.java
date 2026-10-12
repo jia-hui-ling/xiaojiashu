@@ -32,7 +32,7 @@ public class SearchUserRspVO {
     /**
      * 小哈书ID
      */
-    private String xiaohashuId;
+    private String xiaojiashuId;
 
     /**
      * 笔记发布总数
@@ -43,6 +43,11 @@ public class SearchUserRspVO {
      * 粉丝总数
      */
     private Integer fansTotal;
+
+    /**
+     * 昵称：关键词高亮
+     */
+    private String highlightNickname;
 
 }
 
