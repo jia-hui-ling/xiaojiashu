@@ -5,6 +5,7 @@ import com.alibaba.nacos.shaded.com.google.common.collect.Lists;
 import com.jiahuiling.framework.common.response.PageResponse;
 import com.jiahuiling.framework.common.util.NumberUtils;
 import com.jiahuiling.framework.jackson.constant.DateConstants;
+import com.jiahuiling.xiaojiashu.search.enums.NoteSortTypeEnum;
 import com.jiahuiling.xiaojiashu.search.index.NoteIndex;
 import com.jiahuiling.xiaojiashu.search.model.vo.SearchNoteReqVO;
 import com.jiahuiling.xiaojiashu.search.model.vo.SearchNoteRspVO;
@@ -62,6 +63,8 @@ public class NoteServiceImpl implements NoteService {
         Integer pageNo = searchNoteReqVO.getPageNo();
         // 笔记类型
         Integer type = searchNoteReqVO.getType();
+        // 排序类型
+        Integer sort = searchNoteReqVO.getSort();
 
         // 构建 SearchRequest，指定要查询的索引
         SearchRequest searchRequest = new SearchRequest(NoteIndex.NAME);
@@ -92,7 +95,7 @@ public class NoteServiceImpl implements NoteService {
         //      ]
         //    }
         //  },
-        BoolQueryBuilder boolQueryBuilder= QueryBuilders.boolQuery().must(
+        BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery().must(
                 QueryBuilders.multiMatchQuery(keyword)
                         .field(NoteIndex.FIELD_NOTE_TITLE, 2.0f) // 手动设置笔记标题的权重值为 2.0
                         .field(NoteIndex.FIELD_NOTE_TOPIC) // 不设置，权重默认为 1.0
@@ -102,62 +105,9 @@ public class NoteServiceImpl implements NoteService {
         if (Objects.nonNull(type)) {
             boolQueryBuilder.filter(QueryBuilders.termQuery(NoteIndex.FIELD_NOTE_TYPE, type));
         }
-        // 创建 FilterFunctionBuilder 数组
-        // "functions": [
-        //         {
-        //           "field_value_factor": {
-        //             "field": "like_total",
-        //             "factor": 0.5,
-        //             "modifier": "sqrt",
-        //             "missing": 0
-        //           }
-        //         },
-        //         {
-        //           "field_value_factor": {
-        //             "field": "collect_total",
-        //             "factor": 0.3,
-        //             "modifier": "sqrt",
-        //             "missing": 0
-        //           }
-        //         },
-        //         {
-        //           "field_value_factor": {
-        //             "field": "comment_total",
-        //             "factor": 0.2,
-        //             "modifier": "sqrt",
-        //             "missing": 0
-        //           }
-        //         }
-        //       ],
-        FunctionScoreQueryBuilder.FilterFunctionBuilder[] filterFunctionBuilders = new FunctionScoreQueryBuilder.FilterFunctionBuilder[]{
-                new FunctionScoreQueryBuilder.FilterFunctionBuilder(
-                        new FieldValueFactorFunctionBuilder(NoteIndex.FIELD_NOTE_LIKE_TOTAL)
-                                .factor(0.5f)
-                                .modifier(FieldValueFactorFunction.Modifier.SQRT)
-                                .missing(0)
-                ),
-                new FunctionScoreQueryBuilder.FilterFunctionBuilder(
-                        new FieldValueFactorFunctionBuilder(NoteIndex.FIELD_NOTE_COLLECT_TOTAL)
-                                .factor(0.3f)
-                                .modifier(FieldValueFactorFunction.Modifier.SQRT)
-                                .missing(0)
-                ),
-                new FunctionScoreQueryBuilder.FilterFunctionBuilder(
-                        new FieldValueFactorFunctionBuilder(NoteIndex.FIELD_NOTE_COMMENT_TOTAL)
-                                .factor(0.2f)
-                                .modifier(FieldValueFactorFunction.Modifier.SQRT)
-                                .missing(0)
-                ),
-        };
-        // 构建 function_score 查询
-        // "score_mode": "sum",
-        // "boost_mode": "sum"
-        FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery(boolQueryBuilder, filterFunctionBuilders)
-                .scoreMode(FunctionScoreQuery.ScoreMode.SUM) // score_mode 为 sum
-                .boostMode(CombineFunction.SUM); // boost_mode 为 sum;
 
-        // 设置查询
-        sourceBuilder.query(functionScoreQueryBuilder);
+        // 排序
+        NoteSortTypeEnum noteSortTypeEnum = NoteSortTypeEnum.valueOf(sort);
 
         // 设置排序
         // "sort": [
@@ -167,7 +117,86 @@ public class NoteServiceImpl implements NoteService {
         //       }
         //     }
         //   ]
-        sourceBuilder.sort(new FieldSortBuilder("_score").order(SortOrder.DESC));
+        if (Objects.nonNull(noteSortTypeEnum)) {
+            switch (noteSortTypeEnum) {
+                // 按笔记发布时间降序
+                case LATEST ->
+                        sourceBuilder.sort(new FieldSortBuilder(NoteIndex.FIELD_NOTE_CREATE_TIME).order(SortOrder.DESC));
+                // 按笔记点赞量降序
+                case MOST_LIKE ->
+                        sourceBuilder.sort(new FieldSortBuilder(NoteIndex.FIELD_NOTE_LIKE_TOTAL).order(SortOrder.DESC));
+                // 按评论量降序
+                case MOST_COMMENT ->
+                        sourceBuilder.sort(new FieldSortBuilder(NoteIndex.FIELD_NOTE_COMMENT_TOTAL).order(SortOrder.DESC));
+                // 按收藏量降序
+                case MOST_COLLECT ->
+                        sourceBuilder.sort(new FieldSortBuilder(NoteIndex.FIELD_NOTE_COLLECT_TOTAL).order(SortOrder.DESC));
+            }
+            // 设置查询
+            sourceBuilder.query(boolQueryBuilder);
+        } else { // 综合排序
+            // 综合排序，自定义评分，并按 _score 评分降序
+            sourceBuilder.sort(new FieldSortBuilder("_score").order(SortOrder.DESC));
+
+            // 创建 FilterFunctionBuilder 数组
+            // "functions": [
+            //         {
+            //           "field_value_factor": {
+            //             "field": "like_total",
+            //             "factor": 0.5,
+            //             "modifier": "sqrt",
+            //             "missing": 0
+            //           }
+            //         },
+            //         {
+            //           "field_value_factor": {
+            //             "field": "collect_total",
+            //             "factor": 0.3,
+            //             "modifier": "sqrt",
+            //             "missing": 0
+            //           }
+            //         },
+            //         {
+            //           "field_value_factor": {
+            //             "field": "comment_total",
+            //             "factor": 0.2,
+            //             "modifier": "sqrt",
+            //             "missing": 0
+            //           }
+            //         }
+            //       ],
+            FunctionScoreQueryBuilder.FilterFunctionBuilder[] filterFunctionBuilders = new FunctionScoreQueryBuilder.FilterFunctionBuilder[]{
+                    new FunctionScoreQueryBuilder.FilterFunctionBuilder(
+                            new FieldValueFactorFunctionBuilder(NoteIndex.FIELD_NOTE_LIKE_TOTAL)
+                                    .factor(0.5f)
+                                    .modifier(FieldValueFactorFunction.Modifier.SQRT)
+                                    .missing(0)
+                    ),
+                    new FunctionScoreQueryBuilder.FilterFunctionBuilder(
+                            new FieldValueFactorFunctionBuilder(NoteIndex.FIELD_NOTE_COLLECT_TOTAL)
+                                    .factor(0.3f)
+                                    .modifier(FieldValueFactorFunction.Modifier.SQRT)
+                                    .missing(0)
+                    ),
+                    new FunctionScoreQueryBuilder.FilterFunctionBuilder(
+                            new FieldValueFactorFunctionBuilder(NoteIndex.FIELD_NOTE_COMMENT_TOTAL)
+                                    .factor(0.2f)
+                                    .modifier(FieldValueFactorFunction.Modifier.SQRT)
+                                    .missing(0)
+                    ),
+            };
+            // 构建 function_score 查询
+            // "score_mode": "sum",
+            // "boost_mode": "sum"
+            FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery(boolQueryBuilder, filterFunctionBuilders)
+                    .scoreMode(FunctionScoreQuery.ScoreMode.SUM) // score_mode 为 sum
+                    .boostMode(CombineFunction.SUM); // boost_mode 为 sum;
+
+            // 设置查询
+            sourceBuilder.query(functionScoreQueryBuilder);
+
+        }
+
 
         // 设置分页，from 和 size
         int pageSize = 10; // 每页展示数据量
