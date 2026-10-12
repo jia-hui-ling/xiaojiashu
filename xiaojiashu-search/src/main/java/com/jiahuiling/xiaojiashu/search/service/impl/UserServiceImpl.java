@@ -3,6 +3,7 @@ package com.jiahuiling.xiaojiashu.search.service.impl;
 import cn.hutool.core.collection.CollUtil;
 import com.alibaba.nacos.shaded.com.google.common.collect.Lists;
 import com.jiahuiling.framework.common.response.PageResponse;
+import com.jiahuiling.framework.common.util.NumberUtils;
 import com.jiahuiling.xiaojiashu.search.index.UserIndex;
 import com.jiahuiling.xiaojiashu.search.model.vo.SearchUserReqVO;
 import com.jiahuiling.xiaojiashu.search.model.vo.SearchUserRspVO;
@@ -125,7 +126,7 @@ public class UserServiceImpl implements UserService {
                         .avatar(avatar)
                         .xiaojiashuId(xiaojiashuId)
                         .noteTotal(noteTotal)
-                        .fansTotal(fansTotal)
+                        .fansTotal(NumberUtils.formatNumberString(fansTotal))
                         .highlightNickname(highlightedNickname)
                         .build();
                 searchUserRspVOS.add(searchUserRspVO);
