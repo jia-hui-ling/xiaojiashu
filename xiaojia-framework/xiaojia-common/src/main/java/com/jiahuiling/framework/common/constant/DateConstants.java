@@ -24,6 +24,18 @@ public interface DateConstants {
      * DateTimeFormatter：年-月
      */
     DateTimeFormatter DATE_FORMAT_Y_M =  DateTimeFormatter.ofPattern("yyyy-MM");
+
+
+    /**
+     * DateTimeFormatter：月-日
+     */
+    DateTimeFormatter DATE_FORMAT_M_D = DateTimeFormatter.ofPattern("MM-dd");
+
+
+    /**
+     * DateTimeFormatter：时：分
+     */
+    DateTimeFormatter DATE_FORMAT_H_M = DateTimeFormatter.ofPattern("HH:mm");
 }
 
 

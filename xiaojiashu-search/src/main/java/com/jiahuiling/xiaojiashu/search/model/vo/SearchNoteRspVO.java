@@ -46,15 +46,25 @@ public class SearchNoteRspVO {
      */
     private String nickname;
 
-    /**
-     * 最后一次编辑时间
-     */
-    private LocalDateTime updateTime;
 
     /**
      * 被点赞总数
      */
     private String likeTotal;
 
+    /**
+     * 最后一次编辑时间
+     */
+    private String updateTime;
+
+    /**
+     * 被评论数
+     */
+    private String commentTotal;
+
+    /**
+     * 被收藏数
+     */
+    private String collectTotal;
 }
 

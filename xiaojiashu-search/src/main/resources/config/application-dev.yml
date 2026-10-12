@@ -1,2 +1,3 @@
 elasticsearch:
   address: 127.0.0.1:9200 # Elasticsearch 地址
+  hotUpdateExtDict: D:\jiahuiling\xiaojiashu\docker\elasticsearch\config\analysis-ik\custom\mydict_hot_update.dic
