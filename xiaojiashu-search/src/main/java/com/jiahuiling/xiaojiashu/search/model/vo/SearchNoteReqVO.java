@@ -33,4 +33,8 @@ public class SearchNoteReqVO {
      */
     private Integer sort;
 
+    /**
+     * 发布时间范围：null：不限 / 0：一天内 / 1：一周内 / 2：半年内
+     */
+    private Integer publishTimeRange;
 }
