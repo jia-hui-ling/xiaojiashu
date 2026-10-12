@@ -17,9 +17,13 @@
     <module>xiaojiashu-kv</module>
     <module>xiaojiashu-distributed-id-generator</module>
     <module>xiaojiashu-note</module>
+    <module>xiaojiashu-user-relation</module>
+    <module>xiaojiashu-count</module>
+    <module>xiaojiashu-search</module>
   </modules>
   <properties>
     <minio.version>8.2.1</minio.version>
+    <netty.version>4.1.131.Final</netty.version>
     <feign-form.version>3.8.0</feign-form.version>
     <hutool.version>5.8.26</hutool.version>
     <mysql-connector-java.version>8.0.29</mysql-connector-java.version>
@@ -30,13 +34,16 @@
     <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
     <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
     <spring-cloud.version>2022.0.0</spring-cloud.version>
+    <elasticsearch.version>7.3.0</elasticsearch.version>
     <mybatis-generator-maven-plugin.version>1.3.5</mybatis-generator-maven-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <commons-lang3.version>3.12.0</commons-lang3.version>
     <caffeine.version>3.1.8</caffeine.version>
+    <rocketmq.version>2.2.3</rocketmq.version>
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <buffertrigger.version>0.2.21</buffertrigger.version>
     <revision>0.0.1-SNAPSHOT</revision>
     <lombok.version>1.18.30</lombok.version>
     <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -66,6 +73,78 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-bom</artifactId>
+        <version>${netty.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-common</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-buffer</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-transport</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-resolver</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-handler</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec-http</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec-http2</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec-dns</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-resolver-dns</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-transport-native-unix-common</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-handler-proxy</artifactId>
+        <version>${netty.version}</version>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
@@ -179,6 +258,11 @@
       </dependency>
       <dependency>
         <groupId>com.jiahuiling</groupId>
+        <artifactId>xiaojiashu-count-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.jiahuiling</groupId>
         <artifactId>xiaojiashu-kv-api</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
@@ -191,6 +275,31 @@
         <groupId>com.github.ben-manes.caffeine</groupId>
         <artifactId>caffeine</artifactId>
         <version>${caffeine.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.phantomthief</groupId>
+        <artifactId>buffer-trigger</artifactId>
+        <version>${buffertrigger.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.rocketmq</groupId>
+        <artifactId>rocketmq-spring-boot-starter</artifactId>
+        <version>${rocketmq.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.elasticsearch.client</groupId>
+        <artifactId>elasticsearch-rest-high-level-client</artifactId>
+        <version>${elasticsearch.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.elasticsearch.client</groupId>
+        <artifactId>elasticsearch-rest-client</artifactId>
+        <version>${elasticsearch.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.elasticsearch</groupId>
+        <artifactId>elasticsearch</artifactId>
+        <version>${elasticsearch.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

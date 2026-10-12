@@ -10,6 +10,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author 贾慧玲
@@ -63,6 +65,26 @@ public class JsonUtils {
         }
 
         return OBJECT_MAPPER.readValue(jsonStr, clazz);
+    }
+
+    @SneakyThrows
+    public static <T> List<T> parseList(String jsonStr, Class<T> clazz) {
+        if (StringUtils.isBlank(jsonStr)) {
+            return null;
+        }
+
+        return OBJECT_MAPPER.readValue(jsonStr,
+                OBJECT_MAPPER.getTypeFactory().constructCollectionType(List.class, clazz));
+    }
+
+    @SneakyThrows
+    public static <K, V> Map<K, V> parseMap(String jsonStr, Class<K> keyClass, Class<V> valueClass) {
+        if (StringUtils.isBlank(jsonStr)) {
+            return null;
+        }
+
+        return OBJECT_MAPPER.readValue(jsonStr,
+                OBJECT_MAPPER.getTypeFactory().constructMapType(Map.class, keyClass, valueClass));
     }
 }
 

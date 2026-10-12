@@ -18,6 +18,69 @@
 
 services:
 
+  elasticsearch:
+    image: elasticsearch:7.3.0
+    container_name: xiaojiashu-es7
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms1024m -Xmx1024m"
+    volumes:
+      - ./docker/elasticsearch/config:/usr/share/elasticsearch/config
+      - ./docker/elasticsearch/data:/usr/share/elasticsearch/data
+      - ./docker/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      - ./docker/elasticsearch/logs:/usr/share/elasticsearch/logs
+    restart: unless-stopped
+
+  elasticsearch-head:
+    image: mobz/elasticsearch-head:5-alpine
+    container_name: xiaojiashu-es-head
+    ports:
+      - "9100:9100"
+    restart: unless-stopped
+
+  kibana:
+    image: kibana:7.3.0
+    container_name: xiaojiashu-kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    volumes:
+      - ./docker/kibana/config:/usr/share/kibana/config
+    restart: unless-stopped
+
+  logstash:
+    build:
+      context: ./docker/logstash
+    container_name: xiaojiashu-logstash
+    depends_on:
+      - elasticsearch
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./docker/logstash/config/mysql:/usr/share/logstash/config/mysql
+      - ./docker/logstash/data:/usr/share/logstash/data
+      - ./docker/logstash/logs:/usr/share/logstash/logs
+    command: ["logstash", "-f", "/usr/share/logstash/config/mysql/sync-es-note-index/jdbc.conf"]
+    restart: unless-stopped
+
+  logstash-user:
+    image: xiaojiashu-logstash
+    container_name: xiaojiashu-logstash-user
+    depends_on:
+      - elasticsearch
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./docker/logstash/config/mysql:/usr/share/logstash/config/mysql:ro
+      - ./docker/logstash/data-user:/usr/share/logstash/data
+      - ./docker/logstash/logs-user:/usr/share/logstash/logs
+    command: ["logstash", "-f", "/usr/share/logstash/config/mysql/sync-es-user-index/jdbc.conf"]
+    restart: unless-stopped
+
   redis:
     image: redis:7.2.3
     ports:
@@ -25,6 +88,7 @@ services:
     command: [ "redis-server", "/etc/redis/redis.conf" ]
     volumes:
       - ./docker/redis.conf:/etc/redis/redis.conf:ro
+      - ./docker/redis/modules:/etc/redis/modules:ro
       - redis-data:/data
     restart: unless-stopped
 
