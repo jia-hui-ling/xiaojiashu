@@ -1,3 +1,12 @@
 elasticsearch:
   address: 127.0.0.1:9200 # Elasticsearch 地址
   hotUpdateExtDict: D:\jiahuiling\xiaojiashu\docker\elasticsearch\config\analysis-ik\custom\mydict_hot_update.dic
+
+
+canal: # Canal 配置
+  address: 127.0.0.1:11111 # 链接地址
+  destination: example # 数据目标
+  username: canal # 数据库用户名
+  password: canal # 数据库密码
+  subscribe: xiaojiashu[.](t_note|t_user) # 订阅规则，只订阅笔记表和用户表
+  batchSize: 1000 # 一批次拉取数据量

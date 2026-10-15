@@ -18,6 +18,41 @@
 
 services:
 
+  # MySQL 8 with Binlog enabled for Canal. The host's native MySQL80 keeps 3306.
+  mysql8:
+    build:
+      context: ./docker/mysql8
+    image: xiaojiashu-mysql8:8.0.27-binlog
+    container_name: xiaojiashu-mysql8
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
+    volumes:
+      - ./docker/mysql8/data:/var/lib/mysql
+      - ./docker/mysql8/mysql-files:/var/lib/mysql-files
+      - ./sql/mysql-backup.sql:/docker-entrypoint-initdb.d/01-mysql-backup.sql:ro
+      - ./sql/nacos-config.sql:/docker-entrypoint-initdb.d/02-nacos-config.sql:ro
+    restart: unless-stopped
+
+  canal:
+    image: canal/canal-server:v1.1.8
+    container_name: xiaojiashu-canal
+    depends_on:
+      - mysql8
+    ports:
+      - "11110:11110"
+      - "11111:11111"
+      - "11112:11112"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./docker/canal/conf:/home/admin/canal-server/conf
+      - ./docker/canal/data:/home/admin/canal-server/data
+      - ./docker/canal/logs:/home/admin/canal-server/logs
+    restart: unless-stopped
+
   elasticsearch:
     image: elasticsearch:7.3.0
     container_name: xiaojiashu-es7

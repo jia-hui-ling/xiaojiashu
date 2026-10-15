@@ -47,6 +47,7 @@
     <revision>0.0.1-SNAPSHOT</revision>
     <lombok.version>1.18.30</lombok.version>
     <maven.compiler.target>${java.version}</maven.compiler.target>
+    <canal.version>1.1.7</canal.version>
     <druid.version>1.2.23</druid.version>
     <nacos-config.version>0.3.0-RC</nacos-config.version>
     <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
@@ -300,6 +301,21 @@
         <groupId>org.elasticsearch</groupId>
         <artifactId>elasticsearch</artifactId>
         <version>${elasticsearch.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.otter</groupId>
+        <artifactId>canal.client</artifactId>
+        <version>${canal.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.otter</groupId>
+        <artifactId>canal.common</artifactId>
+        <version>${canal.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.otter</groupId>
+        <artifactId>canal.protocol</artifactId>
+        <version>${canal.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
