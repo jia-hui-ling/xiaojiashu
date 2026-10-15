@@ -16,6 +16,20 @@
         <if test="noteId != null">
             and n.id = #{noteId} limit 1
         </if>
+        <if test="userId != null">
+            and u.id = #{userId}
+        </if>
+    </select>
+
+    <select id="selectEsUserIndexData" resultType="map" parameterType="map">
+        select u.id, u.nickname, u.avatar, u.xiaojiashu_id,
+        IFNULL(uc.note_total, 0) as note_total,
+        IFNULL(uc.fans_total, 0) as fans_total
+        from t_user u left join t_user_count uc on u.id = uc.user_id
+        where u.`status` = 0 and u.is_deleted = 0
+        <if test="userId != null">
+            and u.id = #{userId}
+        </if>
     </select>
 
 </mapper>
